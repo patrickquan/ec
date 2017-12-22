@@ -1,0 +1,12 @@
+/ec-api-erp/target
+/ec-api-mall/target
+/ec-api-member/target
+/ec-server-config/target
+/ec-server-eureka
+/ec-server-zuul/target
+/ec-service-authentication/target
+/ec-service-goods/target
+/ec-service-marketing/target
+/ec-service-member/target
+/ec-service-message/target
+/ec-service-order/target

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-api-erp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-api-mall" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-api-member" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-server-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-server-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-server-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-service-authentication" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-service-goods" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-service-marketing" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-service-member" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-service-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-service-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-web-erp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-web-mall" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-web-member" charset="UTF-8" />
+  </component>
+</project>
