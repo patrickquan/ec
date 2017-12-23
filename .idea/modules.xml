@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/ec-common-utils/ec-common-utils.iml" filepath="$PROJECT_DIR$/ec-common-utils/ec-common-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-server-config/ec-server-config.iml" filepath="$PROJECT_DIR$/ec-server-config/ec-server-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-server-eureka/ec-server-eureka.iml" filepath="$PROJECT_DIR$/ec-server-eureka/ec-server-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ec-server-turbine/ec-server-turbine.iml" filepath="$PROJECT_DIR$/ec-server-turbine/ec-server-turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ec-server-zipkin/ec-server-zipkin.iml" filepath="$PROJECT_DIR$/ec-server-zipkin/ec-server-zipkin.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-server-zuul/ec-server-zuul.iml" filepath="$PROJECT_DIR$/ec-server-zuul/ec-server-zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-service-authentication/ec-service-authentication.iml" filepath="$PROJECT_DIR$/ec-service-authentication/ec-service-authentication.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-service-goods/ec-service-goods.iml" filepath="$PROJECT_DIR$/ec-service-goods/ec-service-goods.iml" />

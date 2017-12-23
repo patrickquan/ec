@@ -11,12 +11,17 @@ public class LoginController {
     //会员登录
     @RequestMapping(value ="/member",method = RequestMethod.POST,consumes = "application/json")
     public String memberLogin(String username,String password){
-        return "";
+        return "login";
     }
 
     //ERP登录
     @RequestMapping(value = "/erp",method = RequestMethod.POST,consumes = "application/json")
     public String erpLogin(String username,String password){
         return "";
+    }
+
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public String test(){
+        return "ok";
     }
 }

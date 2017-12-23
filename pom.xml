@@ -22,6 +22,8 @@
         <module>ec-service-message</module>
         <module>ec-common-utils</module>
         <module>ec-common-entity</module>
+        <module>ec-server-zipkin</module>
+        <module>ec-server-turbine</module>
     </modules>
     <packaging>pom</packaging>
 

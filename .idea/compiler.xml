@@ -13,6 +13,8 @@
         <module name="ec-common-utils" />
         <module name="ec-server-config" />
         <module name="ec-server-eureka" />
+        <module name="ec-server-turbine" />
+        <module name="ec-server-zipkin" />
         <module name="ec-server-zuul" />
         <module name="ec-service-authentication" />
         <module name="ec-service-goods" />
@@ -31,6 +33,8 @@
       <module name="ec-common-utils" target="1.5" />
       <module name="ec-server-config" target="1.5" />
       <module name="ec-server-eureka" target="1.5" />
+      <module name="ec-server-turbine" target="1.5" />
+      <module name="ec-server-zipkin" target="1.5" />
       <module name="ec-server-zuul" target="1.5" />
       <module name="ec-service-authentication" target="1.5" />
       <module name="ec-service-goods" target="1.5" />

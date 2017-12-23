@@ -4,13 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LoginServiceHystrix implements LoginService {
-    @Override
-    public String memberLogin(String username, String password) {
-        return "error";
-    }
-
-    @Override
-    public String erpLogin(String username, String password) {
-        return "error";
+    public String test() {
+        return "sorry";
     }
 }

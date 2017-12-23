@@ -4,9 +4,13 @@
 /ec-server-config/target
 /ec-server-eureka/target
 /ec-server-zuul/target
+/ec-server-zipkin/target
+/ec-server-turbine/target
 /ec-service-authentication/target
 /ec-service-goods/target
 /ec-service-marketing/target
 /ec-service-member/target
 /ec-service-message/target
 /ec-service-order/target
+/ec-common-entity/target
+/ec-common-utils/target
