@@ -2,16 +2,18 @@ package com.yangcl.ec.common.entity.erp;
 
 import com.yangcl.ec.common.entity.BaseEntity;
 
-import javax.management.relation.Role;
 import java.util.List;
 
-public class DepartmentEntity extends BaseEntity {
+/**
+ * 部门实体类
+ */
+public class Department extends BaseEntity {
     private long sysno;
     private String departmentNo;
     private String departmentName;
     private long parentSysno;
-    private List<EmployeeEntity> employees;
-    private List<RoleEntity> roles;
+    private List<Employee> employees;
+    private List<Role> roles;
 
     public long getSysno() {
         return sysno;
@@ -45,19 +47,19 @@ public class DepartmentEntity extends BaseEntity {
         this.parentSysno = parentSysno;
     }
 
-    public List<EmployeeEntity> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(List<EmployeeEntity> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 
-    public List<RoleEntity> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<RoleEntity> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 }

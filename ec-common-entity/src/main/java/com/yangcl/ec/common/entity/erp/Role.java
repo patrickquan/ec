@@ -4,12 +4,17 @@ import com.yangcl.ec.common.entity.BaseEntity;
 
 import java.util.List;
 
-public class RoleEntity extends BaseEntity {
+/**
+ * 角色实体类
+ */
+public class Role extends BaseEntity {
     private long sysno;
     private String roleNo;
     private String roleName;
     private String roleDesc;
-    private List<PermissionEntity> permissions;
+    private List<Permission> permissions;
+    private List<User> users;
+    private List<Department> departments;
 
     public long getSysno() {
         return sysno;
@@ -43,11 +48,27 @@ public class RoleEntity extends BaseEntity {
         this.roleDesc = roleDesc;
     }
 
-    public List<PermissionEntity> getPermissions() {
+    public List<Permission> getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(List<PermissionEntity> permissions) {
+    public void setPermissions(List<Permission> permissions) {
         this.permissions = permissions;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
     }
 }

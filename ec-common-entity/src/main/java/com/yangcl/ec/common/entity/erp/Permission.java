@@ -4,7 +4,10 @@ import com.yangcl.ec.common.entity.BaseEntity;
 
 import java.util.List;
 
-public class PermissionEntity extends BaseEntity {
+/**
+ * 权限实体类
+ */
+public class Permission extends BaseEntity {
     private long sysno;
     private String permissionNo;
     private String permissionNamme;

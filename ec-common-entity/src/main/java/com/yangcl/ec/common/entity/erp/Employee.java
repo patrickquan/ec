@@ -5,16 +5,19 @@ import com.yangcl.ec.common.entity.BaseEntity;
 import java.util.Date;
 import java.util.List;
 
-public class EmployeeEntity extends BaseEntity {
+/**
+ * 员工实体类
+ */
+public class Employee extends BaseEntity {
     private long sysno;
-    private DepartmentEntity department;
+    private Department department;
     private String employeeNo;
     private String employeeName;
     private String employeePhoto;
     private boolean employeeSex;
     private Date employeeBirthday;
     private String employeeJobTitle;
-    private List<UserEntity> users;
+    private List<User> users;
 
     public long getSysno() {
         return sysno;
@@ -24,11 +27,11 @@ public class EmployeeEntity extends BaseEntity {
         this.sysno = sysno;
     }
 
-    public DepartmentEntity getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(DepartmentEntity department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 
@@ -80,11 +83,11 @@ public class EmployeeEntity extends BaseEntity {
         this.employeeJobTitle = employeeJobTitle;
     }
 
-    public List<UserEntity> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<UserEntity> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 }

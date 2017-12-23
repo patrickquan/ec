@@ -2,9 +2,8 @@ package com.yangcl.ec.api.erp.controller.system;
 
 import com.yangcl.ec.api.erp.service.authentication.LoginService;
 import com.yangcl.ec.api.erp.service.erp.UserService;
-import com.yangcl.ec.common.entity.erp.UserEntity;
+import com.yangcl.ec.common.entity.erp.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +24,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/get")
-    public UserEntity get(){
+    public User get(){
         return userService.getByKey(1);
     }
 

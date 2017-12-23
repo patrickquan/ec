@@ -1,7 +1,7 @@
 package com.yangcl.ec.api.erp.service.erp;
 
-import com.yangcl.ec.common.entity.erp.UserEntity;
+import com.yangcl.ec.common.entity.erp.User;
 
 public interface UserService {
-    UserEntity getByKey(long sysno);
+    User getByKey(long sysno);
 }
