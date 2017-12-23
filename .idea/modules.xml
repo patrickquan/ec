@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/ec-api-erp/ec-api-erp.iml" filepath="$PROJECT_DIR$/ec-api-erp/ec-api-erp.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-api-mall/ec-api-mall.iml" filepath="$PROJECT_DIR$/ec-api-mall/ec-api-mall.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-api-member/ec-api-member.iml" filepath="$PROJECT_DIR$/ec-api-member/ec-api-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ec-common-entity/ec-common-entity.iml" filepath="$PROJECT_DIR$/ec-common-entity/ec-common-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ec-common-utils/ec-common-utils.iml" filepath="$PROJECT_DIR$/ec-common-utils/ec-common-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-server-config/ec-server-config.iml" filepath="$PROJECT_DIR$/ec-server-config/ec-server-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-server-eureka/ec-server-eureka.iml" filepath="$PROJECT_DIR$/ec-server-eureka/ec-server-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec-server-zuul/ec-server-zuul.iml" filepath="$PROJECT_DIR$/ec-server-zuul/ec-server-zuul.iml" />

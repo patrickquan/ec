@@ -1,0 +1,7 @@
+com\yangcl\ec\common\entity\erp\EmployeeEntity.class
+com\yangcl\ec\common\entity\BaseEntity.class
+com\yangcl\ec\common\entity\erp\RoleEntity.class
+com\yangcl\ec\common\entity\erp\DepartmentEntity.class
+com\yangcl\ec\common\entity\erp\UserEntity.class
+com\yangcl\ec\common\entity\erp\PermissionEntity.class
+com\yangcl\ec\common\entity\Default.class

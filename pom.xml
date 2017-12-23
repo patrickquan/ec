@@ -20,15 +20,20 @@
         <module>ec-api-erp</module>
         <module>ec-service-authentication</module>
         <module>ec-service-message</module>
+        <module>ec-common-utils</module>
+        <module>ec-common-entity</module>
     </modules>
     <packaging>pom</packaging>
 
+    <!--
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.5.RELEASE</version>   <!--配合spring cloud版本-->
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>1.3.5.RELEASE</version>
+        <relativePath/>
     </parent>
+    -->
+
     <properties>
         <!--设置字符编码及java版本-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,6 +52,14 @@
     <!--依赖管理，用于管理spring-cloud的依赖-->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.3.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-parent</artifactId>

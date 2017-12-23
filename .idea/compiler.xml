@@ -9,6 +9,8 @@
         <module name="ec-api-erp" />
         <module name="ec-api-mall" />
         <module name="ec-api-member" />
+        <module name="ec-common-entity" />
+        <module name="ec-common-utils" />
         <module name="ec-server-config" />
         <module name="ec-server-eureka" />
         <module name="ec-server-zuul" />
@@ -21,19 +23,21 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ec" target="1.8" />
-      <module name="ec-api-erp" target="1.8" />
-      <module name="ec-api-mall" target="1.8" />
-      <module name="ec-api-member" target="1.8" />
-      <module name="ec-server-config" target="1.8" />
-      <module name="ec-server-eureka" target="1.8" />
-      <module name="ec-server-zuul" target="1.8" />
-      <module name="ec-service-authentication" target="1.8" />
-      <module name="ec-service-goods" target="1.8" />
-      <module name="ec-service-marketing" target="1.8" />
-      <module name="ec-service-member" target="1.8" />
-      <module name="ec-service-message" target="1.8" />
-      <module name="ec-service-order" target="1.8" />
+      <module name="ec" target="1.5" />
+      <module name="ec-api-erp" target="1.5" />
+      <module name="ec-api-mall" target="1.5" />
+      <module name="ec-api-member" target="1.5" />
+      <module name="ec-common-entity" target="1.5" />
+      <module name="ec-common-utils" target="1.5" />
+      <module name="ec-server-config" target="1.5" />
+      <module name="ec-server-eureka" target="1.5" />
+      <module name="ec-server-zuul" target="1.5" />
+      <module name="ec-service-authentication" target="1.5" />
+      <module name="ec-service-goods" target="1.5" />
+      <module name="ec-service-marketing" target="1.5" />
+      <module name="ec-service-member" target="1.5" />
+      <module name="ec-service-message" target="1.5" />
+      <module name="ec-service-order" target="1.5" />
       <module name="ec-web-erp" target="1.8" />
       <module name="ec-web-mall" target="1.8" />
       <module name="ec-web-member" target="1.8" />

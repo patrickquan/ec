@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/ec-web-erp/pom.xml" />
         <option value="$PROJECT_DIR$/ec-web-mall/pom.xml" />
         <option value="$PROJECT_DIR$/ec-web-member/pom.xml" />
+        <option value="$PROJECT_DIR$/ecc-ommon-entity/pom.xml" />
       </set>
     </option>
   </component>

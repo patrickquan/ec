@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/ec-api-erp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-api-mall" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-api-member" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-common-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ec-common-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-server-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-server-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-server-zuul" charset="UTF-8" />
@@ -15,7 +17,6 @@
     <file url="file://$PROJECT_DIR$/ec-service-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-service-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ec-web-erp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ec-web-mall" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ec-web-member" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ecc-ommon-entity" charset="UTF-8" />
   </component>
 </project>
