@@ -9,21 +9,21 @@ import java.util.List;
  * 员工实体类
  */
 public class Employee extends BaseEntity {
-    private long sysno;
+    private Long sysno;
     private Department department;
     private String employeeNo;
     private String employeeName;
     private String employeePhoto;
-    private boolean employeeSex;
+    private Boolean employeeSex;
     private Date employeeBirthday;
     private String employeeJobTitle;
     private List<User> users;
 
-    public long getSysno() {
+    public Long getSysno() {
         return sysno;
     }
 
-    public void setSysno(long sysno) {
+    public void setSysno(Long sysno) {
         this.sysno = sysno;
     }
 
@@ -59,11 +59,11 @@ public class Employee extends BaseEntity {
         this.employeePhoto = employeePhoto;
     }
 
-    public boolean isEmployeeSex() {
+    public Boolean isEmployeeSex() {
         return employeeSex;
     }
 
-    public void setEmployeeSex(boolean employeeSex) {
+    public void setEmployeeSex(Boolean employeeSex) {
         this.employeeSex = employeeSex;
     }
 

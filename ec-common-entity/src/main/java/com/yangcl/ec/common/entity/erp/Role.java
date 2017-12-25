@@ -8,7 +8,7 @@ import java.util.List;
  * 角色实体类
  */
 public class Role extends BaseEntity {
-    private long sysno;
+    private Long sysno;
     private String roleNo;
     private String roleName;
     private String roleDesc;
@@ -16,11 +16,11 @@ public class Role extends BaseEntity {
     private List<User> users;
     private List<Department> departments;
 
-    public long getSysno() {
+    public Long getSysno() {
         return sysno;
     }
 
-    public void setSysno(long sysno) {
+    public void setSysno(Long sysno) {
         this.sysno = sysno;
     }
 

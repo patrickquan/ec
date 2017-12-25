@@ -8,22 +8,22 @@ import java.util.List;
  * 权限实体类
  */
 public class Permission extends BaseEntity {
-    private long sysno;
+    private Long sysno;
     private String permissionNo;
     private String permissionNamme;
-    private int permissionType;
+    private Integer permissionType;
     private String menuPath;
     private String menuIcon;
     private String resource;
-    private long parentSyno;
-    private int level;
-    private int sortNum;
+    private Long parentSyno;
+    private Integer level;
+    private Integer sortNum;
 
-    public long getSysno() {
+    public Long getSysno() {
         return sysno;
     }
 
-    public void setSysno(long sysno) {
+    public void setSysno(Long sysno) {
         this.sysno = sysno;
     }
 
@@ -43,11 +43,11 @@ public class Permission extends BaseEntity {
         this.permissionNamme = permissionNamme;
     }
 
-    public int getPermissionType() {
+    public Integer getPermissionType() {
         return permissionType;
     }
 
-    public void setPermissionType(int permissionType) {
+    public void setPermissionType(Integer permissionType) {
         this.permissionType = permissionType;
     }
 
@@ -83,19 +83,19 @@ public class Permission extends BaseEntity {
         this.parentSyno = parentSyno;
     }
 
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 
-    public int getSortNum() {
+    public Integer getSortNum() {
         return sortNum;
     }
 
-    public void setSortNum(int sortNum) {
+    public void setSortNum(Integer sortNum) {
         this.sortNum = sortNum;
     }
 }

@@ -8,18 +8,18 @@ import java.util.List;
  * 部门实体类
  */
 public class Department extends BaseEntity {
-    private long sysno;
+    private Long sysno;
     private String departmentNo;
     private String departmentName;
-    private long parentSysno;
+    private Long parentSysno;
     private List<Employee> employees;
     private List<Role> roles;
 
-    public long getSysno() {
+    public Long getSysno() {
         return sysno;
     }
 
-    public void setSysno(long sysno) {
+    public void setSysno(Long sysno) {
         this.sysno = sysno;
     }
 
@@ -39,11 +39,11 @@ public class Department extends BaseEntity {
         this.departmentName = departmentName;
     }
 
-    public long getParentSysno() {
+    public Long getParentSysno() {
         return parentSysno;
     }
 
-    public void setParentSysno(long parentSysno) {
+    public void setParentSysno(Long parentSysno) {
         this.parentSysno = parentSysno;
     }
 

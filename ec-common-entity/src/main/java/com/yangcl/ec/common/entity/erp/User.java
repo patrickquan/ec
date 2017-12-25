@@ -10,21 +10,21 @@ import java.util.List;
  * 帐户实体类
  */
 public class User extends BaseEntity {
-    private long sysno;
+    private Long sysno;
     private Employee employee;
     private String loginName;
     private String loginPwd;
     private Date lastLoginTime;
     private String lastLoginIp;
-    private boolean loginLock;
+    private Boolean loginLock;
     private List<Role> roles;
-    private long employeeSysno;
+    private Long employeeSysno;
 
-    public long getSysno() {
+    public Long getSysno() {
         return sysno;
     }
 
-    public void setSysno(long sysno) {
+    public void setSysno(Long sysno) {
         this.sysno = sysno;
     }
 
@@ -68,11 +68,11 @@ public class User extends BaseEntity {
         this.lastLoginIp = lastLoginIp;
     }
 
-    public boolean isLoginLock() {
+    public Boolean isLoginLock() {
         return loginLock;
     }
 
-    public void setLoginLock(boolean loginLock) {
+    public void setLoginLock(Boolean loginLock) {
         this.loginLock = loginLock;
     }
 
@@ -84,11 +84,11 @@ public class User extends BaseEntity {
         this.roles = roles;
     }
 
-    public long getEmployeeSysno() {
+    public Long getEmployeeSysno() {
         return employeeSysno;
     }
 
-    public void setEmployeeSysno(long employeeSysno) {
+    public void setEmployeeSysno(Long employeeSysno) {
         this.employeeSysno = employeeSysno;
     }
 }

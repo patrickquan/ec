@@ -3,33 +3,33 @@ package com.yangcl.ec.common.entity;
 import java.util.Date;
 
 public class BaseEntity {
-    private int status;
-    private boolean isDel;
-    private int version;
+    private Integer  status;
+    private Boolean isDel;
+    private Integer  version;
     private Date createdAt;
     private Date updatedAt;
 
-    public int getStatus() {
+    public Integer  getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer  status) {
         this.status = status;
     }
 
-    public boolean isDel() {
+    public Boolean isDel() {
         return isDel;
     }
 
-    public void setDel(boolean del) {
+    public void setDel(Boolean del) {
         isDel = del;
     }
 
-    public int getVersion() {
+    public Integer  getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(Integer  version) {
         this.version = version;
     }
 

@@ -38,6 +38,10 @@ public class EmployeeController {
         if(employeeName!=null && employeeName!=""){
             where.put("employeeName",employeeName);
         }
+        Employee e=new Employee();
+        if(e.isDel()==true){
+
+        }
         return employeeService.select(where);
     }
 }
