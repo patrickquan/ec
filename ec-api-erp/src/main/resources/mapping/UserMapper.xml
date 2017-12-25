@@ -14,7 +14,7 @@
         <result column="createdat" property="createdAt" jdbcType="DATE" />
         <result column="updatedat" property="updatedAt" jdbcType="DATE" />
         <association property="employee" column="employee_sysno" select="com.yangcl.ec.api.erp.mapper.EmployeeMapper.get"/>
-        <collection property="roles" column="sysno" select="com.yangcl.ec.api.erp.mapper.PermissionMapper.selectByUserSysno"/>
+        <collection property="roles" column="sysno" select="com.yangcl.ec.api.erp.mapper.RoleMapper.selectByUserSysno"/>
     </resultMap>
     <sql id="UserColumns" >
         sysno,loginname,loginpwd,lastlogintime,lastloginip,loginlock,`status`,isdel,version,createdat,updatedat
