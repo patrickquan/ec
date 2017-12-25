@@ -2,14 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yangcl.ec.api.erp.mapper.DepartmentMapper" >
     <resultMap id="DepartmentResultMap" type="com.yangcl.ec.common.entity.erp.Department" >
-        <id column="sysno" property="sysno" jdbcType="INTEGER" />
+        <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="departmentno" property="departmentNo" jdbcType="VARCHAR" />
-        <result column="parent_sysno" property="parentSysno" jdbcType="INTEGER" />
+        <result column="parent_sysno" property="parentSysno" jdbcType="BIGINT" />
         <result column="status" property="status" jdbcType="INTEGER" />
         <result column="isdel" property="isDel" jdbcType="BIT" />
         <result column="version" property="version" jdbcType="INTEGER" />
-        <result column="createdat" property="createdAt" jdbcType="Date" />
-        <result column="updatedat" property="updatedAt" jdbcType="Date" />
+        <result column="createdat" property="createdAt" jdbcType="DATE" />
+        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <collection property="employees" column="sysno" select="com.yangcl.ec.api.erp.mapper.EmployeeMapper.selectByDepartmentSysNo"/>
     </resultMap>
     <sql id="DepartmentColumns" >
         sysno,departmentno,departmentname,parent_sysno,status,isdel,version,createdat,updatedat
@@ -26,10 +27,10 @@
         version=#{version},updatedat=#{updatedAt}
         WHERE sysno=#{sysno}
     </update>
-    <select id="getByKey" resultMap="UserResultMap" parameterType="long" >
+    <select id="getBySysno" resultMap="DepartmentResultMap" parameterType="long" >
         select
-        <include refid="User_Column_List" />
-        from system_user
+        <include refid="DepartmentColumns" />
+        from system_department
         where sysno = #{sysno,jdbcType=INTEGER}
     </select>
 

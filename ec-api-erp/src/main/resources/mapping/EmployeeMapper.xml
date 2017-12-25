@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangcl.ec.api.erp.mapper.EmployeeMapper" >
+    <resultMap id="EmployeeResultMap" type="com.yangcl.ec.common.entity.erp.Employee" >
+        <id column="sysno" property="sysno" jdbcType="BIGINT" />
+        <result column="employeeno" property="employeeNo" jdbcType="VARCHAR" />
+        <result column="employeename" property="employeeName" jdbcType="VARCHAR" />
+        <result column="employeephoto" property="employeePhoto" jdbcType="VARCHAR" />
+        <result column="employeesex" property="employeeSex" jdbcType="BIT" />
+        <result column="employeebirthday" property="employeeBirthday" jdbcType="DATE" />
+        <result column="employeejobtitle" property="employeeJobTitle" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="isdel" property="isDel" jdbcType="BIT" />
+        <result column="version" property="version" jdbcType="INTEGER" />
+        <result column="createdat" property="createdAt" jdbcType="DATE" />
+        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <!--<association property="department" column="department_sysno" select="com.yangcl.ec.api.erp.mapper.DepartmentMapper.getBySysno"/>-->
+        <association property="department" javaType="com.yangcl.ec.common.entity.erp.Department">
+            <id column="d_sysno" property="sysno" jdbcType="BIGINT" />
+            <result column="d_departmentno" property="departmentNo" jdbcType="VARCHAR" />
+            <result column="d_parent_sysno" property="parentSysno" jdbcType="BIGINT" />
+            <result column="d_status" property="status" jdbcType="INTEGER" />
+            <result column="d_isdel" property="isDel" jdbcType="BIT" />
+            <result column="d_version" property="version" jdbcType="INTEGER" />
+            <result column="d_createdat" property="createdAt" jdbcType="DATE" />
+            <result column="d_updatedat" property="updatedAt" jdbcType="DATE" />
+        </association>
+    </resultMap>
+    <sql id="EmployeeColumns" >
+        emp.sysno,emp.employeeno,emp.employeename,emp.employeephoto,emp.employeesex,emp.employeebirthday,emp.employeejobtitle,emp.`status`,emp.isdel,emp.version,emp.createdat,emp.updatedat,
+        dpm.sysno AS d_sysno,dpm.departmentno AS d_departmentno,dpm.departmentname AS d_departmentname,dpm.parent_sysno AS d_parent_sysno,dpm.`status` AS d_status,
+        dpm.isdel AS d_isdel,dpm.version AS d_version,dpm.createdat AS d_createdat,dpm.updatedat AS d_updatedat
+    </sql>
+    <select id="getBySysno" resultMap="EmployeeResultMap" parameterType="long">
+        SELECT
+        <include refid="EmployeeColumns"/>
+        FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno
+        WHERE
+        emp.sysno=#{sysno}
+    </select>
+    <select id="selectByParams" resultMap="EmployeeResultMap" parameterType="com.yangcl.ec.common.entity.erp.Employee">
+        SELECT
+        <include refid="EmployeeColumns"/>
+        FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno
+        <choose>
+            <when test="employeeName!=null">
+                AND emp.employeename LIKE CONCAT('%',#{employeeName},'%')
+            </when>
+            <when test="employeeSex!=-1">
+                AND emp.employeesex=#{employeeSex}
+            </when>
+            <otherwise>
+                1=1
+            </otherwise>
+        </choose>
+    </select>
+    <select id="selectByDepartmentSysNo" resultMap="EmployeeResultMap" parameterType="long">
+        SELECT
+        sysno,employeeno,employeename,employeephoto,employeesex,employeebirthday,employeejobtitle,status,isdel,version,createdat,updatedat
+        FROM system_employee
+        WHERE department_sysno=#{sysno}
+    </select>
+</mapper>

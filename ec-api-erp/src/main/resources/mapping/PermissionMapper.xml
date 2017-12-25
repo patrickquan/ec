@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangcl.ec.api.erp.mapper.PermissionMapper" >
+    <resultMap id="EmployeeResultMap" type="com.yangcl.ec.common.entity.erp.Permission" >
+        <id column="sysno" property="sysno" jdbcType="BIGINT" />
+        <result column="permissionno" property="permissionNo" jdbcType="VARCHAR" />
+        <result column="permissionname" property="permissionName" jdbcType="VARCHAR" />
+        <result column="permissiontype" property="permissionType" jdbcType="INTEGER" />
+        <result column="menupath" property="menuPath" jdbcType="VARCHAR" />
+        <result column="menuicon" property="menuIcon" jdbcType="VARCHAR" />
+        <result column="resource" property="resource" jdbcType="VARCHAR" />
+        <result column="parent_sysno" property="partentSysno" jdbcType="BIGINT" />
+        <result column="level" property="level" jdbcType="INTEGER" />
+        <result column="sortnum" property="sortNum" jdbcType="INTEGER" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="isdel" property="isDel" jdbcType="BIT" />
+        <result column="version" property="version" jdbcType="INTEGER" />
+        <result column="createdat" property="createdAt" jdbcType="DATE" />
+        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+    </resultMap>
+    <sql id="PermissionColumns" >
+        sysno,permissionno,permissionname,permissiontype,menupath,menuicon,resource,parent_sysno,level,sortnum,status,isdel,version,createdat,updatedat
+    </sql>
+</mapper>

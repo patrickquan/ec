@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangcl.ec.api.erp.mapper.RoleMapper" >
+    <resultMap id="EmployeeResultMap" type="com.yangcl.ec.common.entity.erp.Role" >
+        <id column="sysno" property="sysno" jdbcType="BIGINT" />
+        <result column="roleno" property="roleNo" jdbcType="VARCHAR" />
+        <result column="rolename" property="roleName" jdbcType="VARCHAR" />
+        <result column="roledesc" property="roleDesc" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="isdel" property="isDel" jdbcType="BIT" />
+        <result column="version" property="version" jdbcType="INTEGER" />
+        <result column="createdat" property="createdAt" jdbcType="DATE" />
+        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+    </resultMap>
+    <sql id="RoleColumns" >
+        sysno,roleno,rolename,roledesc,status,isdel,version,createdat,updatedat
+    </sql>
+</mapper>

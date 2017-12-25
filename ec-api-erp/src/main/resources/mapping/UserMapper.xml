@@ -2,11 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yangcl.ec.api.erp.mapper.UserMapper" >
     <resultMap id="UserResultMap" type="com.yangcl.ec.common.entity.erp.User" >
-        <id column="sysno" property="sysno" jdbcType="INTEGER" />
+        <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="loginname" property="loginName" jdbcType="VARCHAR" />
         <result column="loginpwd" property="loginPwd" jdbcType="VARCHAR" />
+        <result column="lastlogintime" property="lastLoginTime" jdbcType="DATE" />
+        <result column="lastloginip" property="lastLoginIp" jdbcType="VARCHAR" />
+        <result column="loginlock" property="loginLock" jdbcType="BIT" />
         <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="isdel" property="isDel" jdbcType="BIT" />
         <result column="version" property="version" jdbcType="INTEGER" />
+        <result column="createdat" property="createdAt" jdbcType="DATE" />
+        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
     </resultMap>
     <sql id="User_Column_List" >
         sysno,employee_sysno,loginname,loginpwd,status,isdel,version
@@ -15,7 +21,7 @@
         select
         <include refid="User_Column_List" />
         from system_user
-        where sysno = #{sysno,jdbcType=INTEGER}
+        where sysno = #{sysno,jdbcType=BIGINT}
     </select>
 
 </mapper>
