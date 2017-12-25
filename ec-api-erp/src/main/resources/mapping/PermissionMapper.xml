@@ -21,4 +21,10 @@
     <sql id="PermissionColumns" >
         sysno,permissionno,permissionname,permissiontype,menupath,menuicon,resource,parent_sysno,level,sortnum,status,isdel,version,createdat,updatedat
     </sql>
+    <select id="selectByRoleSysno" parameterType="long">
+        SELECT
+        <include refid="PermissionColumns"/>
+        FROM system_permission psn INNER JOIN system_role_permission rpm ON rpm.permission_sysno=psn.sysno
+        WHERE rpm.role_sysno=#{sysno}
+    </select>
 </mapper>

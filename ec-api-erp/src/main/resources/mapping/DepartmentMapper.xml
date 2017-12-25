@@ -27,11 +27,16 @@
         version=#{version},updatedat=#{updatedAt}
         WHERE sysno=#{sysno}
     </update>
-    <select id="getBySysno" resultMap="DepartmentResultMap" parameterType="long" >
+    <select id="get" resultMap="DepartmentResultMap" parameterType="long" >
         select
         <include refid="DepartmentColumns" />
         from system_department
         where sysno = #{sysno,jdbcType=INTEGER}
     </select>
-
+    <select id="select" resultMap="DepartmentResultMap" parameterType="java.util.Map">
+        SELECT
+        <include refid="DepartmentColumns"/>
+        FROM system_department
+        WHERE 1=1
+    </select>
 </mapper>

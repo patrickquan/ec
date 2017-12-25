@@ -10,7 +10,7 @@ public interface EmployeeMapper {
     public long delete(long sysno);
     public long update(Employee employee);
     public Employee get(long sysno);
-    public List<Employee> select(Map<String,Object> where);
+    public List<Employee> select(Map<String,Object> condition);
     public List<Employee> selectByDepartmentSysNo(long sysno);
 
 }

@@ -18,6 +18,7 @@ public class User extends BaseEntity {
     private String lastLoginIp;
     private boolean loginLock;
     private List<Role> roles;
+    private long employeeSysno;
 
     public long getSysno() {
         return sysno;
@@ -81,5 +82,13 @@ public class User extends BaseEntity {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public long getEmployeeSysno() {
+        return employeeSysno;
+    }
+
+    public void setEmployeeSysno(long employeeSysno) {
+        this.employeeSysno = employeeSysno;
     }
 }

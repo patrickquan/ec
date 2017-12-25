@@ -17,6 +17,6 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout = 36000,rollbackFor = Exception.class)
     public User getByKey(long sysno) {
-        return userMapper.getByKey(sysno);
+        return userMapper.get(sysno);
     }
 }

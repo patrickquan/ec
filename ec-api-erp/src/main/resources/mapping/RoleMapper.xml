@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yangcl.ec.api.erp.mapper.RoleMapper" >
-    <resultMap id="EmployeeResultMap" type="com.yangcl.ec.common.entity.erp.Role" >
+    <resultMap id="RoleResultMap" type="com.yangcl.ec.common.entity.erp.Role" >
         <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="roleno" property="roleNo" jdbcType="VARCHAR" />
         <result column="rolename" property="roleName" jdbcType="VARCHAR" />
@@ -11,8 +11,53 @@
         <result column="version" property="version" jdbcType="INTEGER" />
         <result column="createdat" property="createdAt" jdbcType="DATE" />
         <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <association property="permissions" column="sysno" select="com.yangcl.ec.api.erp.mapper.PermissionMapper.selectByRoleSysno"/>
     </resultMap>
     <sql id="RoleColumns" >
         sysno,roleno,rolename,roledesc,status,isdel,version,createdat,updatedat
     </sql>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.Role">
+        INSERT INTO system_role
+        (roleno,rolename,roledesc,`status`,isdel,version,createdat,updatedat)
+        VALUES
+        (#{roleNo},#{roleName},#{roleDesc},#{status},#{isDel},#{version},#{createdAt},#{updatedAt})
+    </insert>
+    <delete id="delete" parameterType="long">
+        DELETE FROM system_role WHERE sysno=#{sysno}
+    </delete>
+    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.Role">
+        UPDATE FROM system_role SET
+        roleno=#{roleNo},rolename=#{roleName},roledesc=#{roleDesc},`status`=#{status},isdel=#{isDel},version=#{version},updatedat=#{updatedAt}
+        WHERE sysno=#{sysno}
+    </update>
+    <select id="get" resultMap="RoleResultMap" parameterType="long">
+        SELECT
+        <include refid="RoleColumns"/>
+        FROM system_role WHERE sysno=#{sysno}
+    </select>
+    <select id="select" resultMap="RoleResultMap" parameterType="java.util.Map">
+        SELECT
+        <include refid="RoleColumns"/>
+        FROM system_role WHERE 1=1
+        <choose>
+            <when test="roleName!=null">
+                AND roleName LIKE CONCAT('%',#{roleName},'%')
+            </when>
+            <when test="status!=null AND status!=-1">
+                AND status=#{status}
+            </when>
+        </choose>
+    </select>
+    <select id="selectByUserSysno" resultMap="RoleResultMap" parameterType="long">
+        SELECT
+        <include refid="RoleColumns"/>
+        FROM system_role roe INNER JOIN system_user_role ure ON ure.role_sysno=roe.sysno
+        WHERE ure.user_sysno=#{sysno}
+    </select>
+    <select id="selectByDepartmentSysno" resultMap="RoleResultMap" parameterType="long">
+        SELECT
+        <include refid="RoleColumns"/>
+        FROM system_role roe INNER JOIN system_department_role dre ON dre.role_sysno=roe.sysno
+        WHERE dre.department_sysno=#{sysno}
+    </select>
 </mapper>

@@ -25,6 +25,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     public Department getBySysno(long sysno) {
-        return departmentMapper.getBySysno(sysno);
+        return departmentMapper.get(sysno);
     }
 }

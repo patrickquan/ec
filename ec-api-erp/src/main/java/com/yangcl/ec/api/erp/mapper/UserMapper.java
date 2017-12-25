@@ -2,6 +2,13 @@ package com.yangcl.ec.api.erp.mapper;
 import com.yangcl.ec.common.entity.erp.*;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+import java.util.Map;
+
 public interface UserMapper {
-    User getByKey(long sysno);
+    public long insert(User user);
+    public long delete(long sysno);
+    public long update(User user);
+    public User get(long sysno);
+    public List<User> select(Map<String,Object> condition);
 }

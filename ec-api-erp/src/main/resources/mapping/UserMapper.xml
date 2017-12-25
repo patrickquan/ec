@@ -13,15 +13,44 @@
         <result column="version" property="version" jdbcType="INTEGER" />
         <result column="createdat" property="createdAt" jdbcType="DATE" />
         <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <association property="employee" column="employee_sysno" select="com.yangcl.ec.api.erp.mapper.EmployeeMapper.get"/>
+        <collection property="roles" column="sysno" select="com.yangcl.ec.api.erp.mapper.PermissionMapper.selectByUserSysno"/>
     </resultMap>
-    <sql id="User_Column_List" >
-        sysno,employee_sysno,loginname,loginpwd,status,isdel,version
+    <sql id="UserColumns" >
+        sysno,loginname,loginpwd,lastlogintime,lastloginip,loginlock,`status`,isdel,version,createdat,updatedat
     </sql>
-    <select id="getByKey" resultMap="UserResultMap" parameterType="long" >
+    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.User">
+        INSERT INTO system_user (employee_sysno,loginname,loginpwd,lastlogintime,lastloginip,loginlock,`status`,isdel,version,createdat,updatedat)
+        VALUES
+        (#{employeeSysno},#{loginName},#{loginPwd},#{lastLoginTime},#{lastLoginIp},#{loginLock},#{status},#{isdel},#{version},#{createdAt},#{updatedAt})
+    </insert>
+    <delete id="delete" parameterType="long">
+        DELETE FROM sys_user WHERE sysno=#{sysno}
+    </delete>
+    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.User">
+        UPDATE FROM system_user SET
+        employee_sysno=#{employeeSysno},loginname=#{loginName},loginpwd=#{loginPwd},lastlogintime=#{lastLoginTime},lastloginip=#{lastLoginIp},
+        loginlock=#{loginLock},`status`=#{status},isdel=#{isDel},version=#{version},updatedat=#{updatedAt}
+        WHERE sysno=#{sysno}
+    </update>
+    <select id="get" resultMap="UserResultMap" parameterType="long" >
         select
-        <include refid="User_Column_List" />
+        <include refid="UserColumns" />
         from system_user
         where sysno = #{sysno,jdbcType=BIGINT}
+    </select>
+    <select id="select" resultMap="UserResultMap" parameterType="java.util.Map">
+        SELECT
+        <include refid="UserColumns" />
+        FROM system_user WHERE 1=1
+        <choose>
+            <when test="loginName!=null">
+                AND loginname=#{loginName}
+            </when>
+            <when test="status!=null">
+                AND `status`=#{status}
+            </when>
+        </choose>
     </select>
 
 </mapper>
