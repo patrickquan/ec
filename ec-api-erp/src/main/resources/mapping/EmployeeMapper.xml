@@ -31,27 +31,36 @@
         dpm.sysno AS d_sysno,dpm.departmentno AS d_departmentno,dpm.departmentname AS d_departmentname,dpm.parent_sysno AS d_parent_sysno,dpm.`status` AS d_status,
         dpm.isdel AS d_isdel,dpm.version AS d_version,dpm.createdat AS d_createdat,dpm.updatedat AS d_updatedat
     </sql>
-    <select id="getBySysno" resultMap="EmployeeResultMap" parameterType="long">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.Employee">
+        INSERT INTO system_employee (employeeno,employeename,employeephoto,employeesex,employeebirthday,employeejobtitle,`status`,isdel,version,createdat,updatedat)
+        VALUES (#{employeeNo},#{employeeName},#{employeePhoto},#{employeeSex},#{employeeBirthday},#{employeeJobTitle},#{status},#{isDel},#{version},#{createdAt},#{updatedAt})
+    </insert>
+    <delete id="delete" parameterType="long">
+        DELETE FROM system_employee WHERE sysno=#{sysno}
+    </delete>
+    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.Employee">
+        UPDATE FROM system_employee SET employeeno=#{employeeNo},employeename=#{employeeName},employeephoto=#{employeePhoto},employeesex=#{employeeSex},
+        employeebirthday=#{employeeBirthday},employeejobtitle=#{employeeJobTitle},`status`=#{status},isdel=#{isDel},version=#{version},updatedat=#{updatedAt}
+        WHERE sysno=#{sysno}
+    </update>
+    <select id="get" resultMap="EmployeeResultMap" parameterType="long">
         SELECT
         <include refid="EmployeeColumns"/>
         FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno
         WHERE
         emp.sysno=#{sysno}
     </select>
-    <select id="selectByParams" resultMap="EmployeeResultMap" parameterType="com.yangcl.ec.common.entity.erp.Employee">
+    <select id="select" resultMap="EmployeeResultMap" parameterType="java.util.Map">
         SELECT
         <include refid="EmployeeColumns"/>
-        FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno
+        FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno WHERE 1=1
         <choose>
             <when test="employeeName!=null">
                 AND emp.employeename LIKE CONCAT('%',#{employeeName},'%')
             </when>
-            <when test="employeeSex!=-1">
+            <when test="employeeSex!=null">
                 AND emp.employeesex=#{employeeSex}
             </when>
-            <otherwise>
-                1=1
-            </otherwise>
         </choose>
     </select>
     <select id="selectByDepartmentSysNo" resultMap="EmployeeResultMap" parameterType="long">

@@ -3,9 +3,14 @@ package com.yangcl.ec.api.erp.mapper;
 import com.yangcl.ec.common.entity.erp.Employee;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeMapper {
+    public long insert(Employee employee);
+    public long delete(long sysno);
+    public long update(Employee employee);
+    public Employee get(long sysno);
+    public List<Employee> select(Map<String,Object> where);
     public List<Employee> selectByDepartmentSysNo(long sysno);
-    public Employee getBySysno(long sysno);
-    public List<Employee> selectByParams(Employee employee);
+
 }

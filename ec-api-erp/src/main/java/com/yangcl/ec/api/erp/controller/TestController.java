@@ -1,5 +1,6 @@
 package com.yangcl.ec.api.erp.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.yangcl.ec.api.erp.service.erp.DepartmentService;
 import com.yangcl.ec.api.erp.service.erp.EmployeeService;
 import com.yangcl.ec.common.entity.erp.Department;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class TestController {
@@ -22,14 +25,14 @@ public class TestController {
 
     @RequestMapping(value = "/employee/get",method = RequestMethod.GET)
     public Employee getEmployee(){
-        Employee employee=employeeService.selectBySysno(1);
+        Employee employee=employeeService.get(1);
         return employee;
     }
 
     @RequestMapping(value = "/employee/list",method = RequestMethod.GET)
-    public List<Employee> getEmployees(){
-        Employee where=new Employee();
-        List<Employee> employees=employeeService.selectByParams(where,2,2);
+    public PageInfo<Employee> getEmployees(){
+        Map<String,Object> where=new HashMap<String,Object>();
+        PageInfo<Employee> employees=employeeService.select(where);
         return employees;
     }
 
