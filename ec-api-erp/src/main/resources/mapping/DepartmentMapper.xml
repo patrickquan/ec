@@ -8,8 +8,8 @@
         <result column="status" property="status" jdbcType="INTEGER" />
         <result column="isdel" property="isDel" jdbcType="BIT" />
         <result column="version" property="version" jdbcType="INTEGER" />
-        <result column="createdat" property="createdAt" jdbcType="DATE" />
-        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <result column="createdat" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updatedat" property="updatedAt" jdbcType="TIMESTAMP" />
         <collection property="employees" column="sysno" select="com.yangcl.ec.api.erp.mapper.EmployeeMapper.selectByDepartmentSysNo"/>
     </resultMap>
     <sql id="DepartmentColumns" >

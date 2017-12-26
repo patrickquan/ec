@@ -9,14 +9,47 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Service(value="userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
 
-    @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,timeout = 36000,rollbackFor = Exception.class)
-    public User getByKey(long sysno) {
+    public long insert(User user) {
+        return userMapper.insert(user);
+    }
+
+    public long delete(long sysno) {
+        return userMapper.delete(sysno);
+    }
+
+    public long update(User user) {
+        return userMapper.update(user);
+    }
+
+    public User get(long sysno) {
         return userMapper.get(sysno);
+    }
+
+    public List<User> select(Map<String, Object> condition) {
+        return userMapper.select(condition);
+    }
+
+    public User getByUsernameAndPassword(String loginName, String loginPwd) {
+        Map<String,Object> condition=new HashMap<String,Object>();
+        condition.put("loginName",loginName);
+        condition.put("loginPwd",loginPwd);
+        condition.put("status",1);
+        condition.put("isDel",0);
+        List<User> users=userMapper.select(condition);
+        if(users.size()>0){
+            return users.get(0);
+        }else{
+            return null;
+        }
     }
 }

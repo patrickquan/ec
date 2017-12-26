@@ -9,11 +9,14 @@
         <result column="status" property="status" jdbcType="INTEGER" />
         <result column="isdel" property="isDel" jdbcType="BIT" />
         <result column="version" property="version" jdbcType="INTEGER" />
-        <result column="createdat" property="createdAt" jdbcType="DATE" />
-        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <result column="createdat" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updatedat" property="updatedAt" jdbcType="TIMESTAMP" />
         <association property="permissions" column="sysno" select="com.yangcl.ec.api.erp.mapper.PermissionMapper.selectByRoleSysno"/>
     </resultMap>
-    <sql id="RoleColumns" >
+    <sql id="RoleColumns2" >
+        roe.sysno AS sysno,roe.roleno AS roleno,roe.rolename AS rolename,roe.roledesc AS roledesc,roe.status AS status,roe.isdel AS isdel,roe.version AS version,roe.createdat AS createdat,roe.updatedat AS updatedat
+    </sql>
+    <sql id="RoleColumns">
         sysno,roleno,rolename,roledesc,status,isdel,version,createdat,updatedat
     </sql>
     <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.Role">
@@ -50,13 +53,13 @@
     </select>
     <select id="selectByUserSysno" resultMap="RoleResultMap" parameterType="long">
         SELECT
-        <include refid="RoleColumns"/>
+        <include refid="RoleColumns2"/>
         FROM system_role roe INNER JOIN system_user_role ure ON ure.role_sysno=roe.sysno
         WHERE ure.user_sysno=#{sysno}
     </select>
     <select id="selectByDepartmentSysno" resultMap="RoleResultMap" parameterType="long">
         SELECT
-        <include refid="RoleColumns"/>
+        <include refid="RoleColumns2"/>
         FROM system_role roe INNER JOIN system_department_role dre ON dre.role_sysno=roe.sysno
         WHERE dre.department_sysno=#{sysno}
     </select>

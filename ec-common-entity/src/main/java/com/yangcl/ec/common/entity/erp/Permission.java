@@ -10,12 +10,12 @@ import java.util.List;
 public class Permission extends BaseEntity {
     private Long sysno;
     private String permissionNo;
-    private String permissionNamme;
+    private String permissionName;
     private Integer permissionType;
     private String menuPath;
     private String menuIcon;
     private String resource;
-    private Long parentSyno;
+    private Long parentSysno;
     private Integer level;
     private Integer sortNum;
 
@@ -35,13 +35,6 @@ public class Permission extends BaseEntity {
         this.permissionNo = permissionNo;
     }
 
-    public String getPermissionNamme() {
-        return permissionNamme;
-    }
-
-    public void setPermissionNamme(String permissionNamme) {
-        this.permissionNamme = permissionNamme;
-    }
 
     public Integer getPermissionType() {
         return permissionType;
@@ -75,14 +68,6 @@ public class Permission extends BaseEntity {
         this.resource = resource;
     }
 
-    public long getParentSyno() {
-        return parentSyno;
-    }
-
-    public void setParentSyno(long parentSyno) {
-        this.parentSyno = parentSyno;
-    }
-
     public Integer getLevel() {
         return level;
     }
@@ -97,5 +82,21 @@ public class Permission extends BaseEntity {
 
     public void setSortNum(Integer sortNum) {
         this.sortNum = sortNum;
+    }
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
+
+    public Long getParentSysno() {
+        return parentSysno;
+    }
+
+    public void setParentSysno(Long parentSysno) {
+        this.parentSysno = parentSysno;
     }
 }

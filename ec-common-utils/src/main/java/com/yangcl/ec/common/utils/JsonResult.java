@@ -4,31 +4,31 @@ public class JsonResult<T> {
     private String code;
     private String status;
     private String message;
-    private T data;
+    private T entity;
 
     public JsonResult(String code,String message){
         this.code=code;
         this.status="";
         this.message=message;
-        this.data=null;
+        this.entity=null;
     }
     public JsonResult(String code,String status,String message){
         this.code=code;
         this.status=status;
         this.message=message;
-        this.data=null;
+        this.entity=null;
     }
     public JsonResult(String code,String message,T data){
         this.code=code;
         this.status="";
         this.message=message;
-        this.data=data;
+        this.entity=data;
     }
     public JsonResult(String code,String status,String message,T data){
         this.code=code;
         this.status=status;
         this.message=message;
-        this.data=data;
+        this.entity=data;
     }
 
     public String getCode() {
@@ -55,11 +55,11 @@ public class JsonResult<T> {
         this.message = message;
     }
 
-    public T getData() {
-        return data;
+    public T getEntity() {
+        return entity;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setEntity(T data) {
+        this.entity = data;
     }
 }

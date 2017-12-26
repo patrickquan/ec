@@ -11,8 +11,7 @@
         </el-form-item>
         <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox>
         <el-form-item style="width:100%;margin-top:10px;">
-            <el-button type="primary" style="width:50%;" @click.native.prevent="loginIn" :loading="logining">登录</el-button>
-            <el-button type="primary" style="width:50%;" @click.native.prevent="test" :loading="logining">测试</el-button>
+            <el-button type="primary" style="width:100%;" @click.native.prevent="loginIn" :loading="logining">登录</el-button>
         </el-form-item>
     </el-form>
 </template>
@@ -43,21 +42,70 @@ export default {
         resetForm() {
             this.$refs.loginForm.resetFields();
         },
+        menuchilren(data,pid){
+            var result=[],temp;
+            for(var i in data){
+                if(data[i].parent==pid){
+                    data[i]=data[i];
+                    result.push(data[i]);
+                    temp=this.menuchilren(data,data[i].id);
+                    if(temp.length>0){
+                        data[i].children=temp;
+                    }
+                }
+            }
+        },
         loginIn(ev) {
             this.$refs.loginForm.validate((valid) => {
                 if(valid){
                     this.logining=true;
-                    var loginParams={loginuser:this.loginForm.loginuser,loginpwd:this.loginForm.loginpwd};
+                    var loginParams={loginName:this.loginForm.loginuser,loginPwd:this.loginForm.loginpwd};
                     requestLogin(loginParams).then(data=>{
                         this.logining=false;
-                        let {msg,code,user}=data;
+                        let {message,code,entity}=data;
+                        console.log(message);
                         if(code!=200){
                             this.$message({
-                                message:msg,
+                                message:message,
                                 type:'error'
                             });
                         }else{
-                            sessionStorage.setItem('user',JSON.stringify(user));
+                            let pers=[];
+                            entity.roles.forEach(function (r) {
+                                r.permissions.forEach(function (p) {
+                                    if(pers.length==0){
+                                        pers.push(p);
+                                    }else{
+                                        let isCheck=true;
+                                        pers.forEach(function (pr) {
+                                            if(pr.sysno===p.sysno){
+                                              isCheck=false;
+                                            }
+                                        });
+                                        if(isCheck){
+                                            pers.push(p);
+                                        }
+                                    }
+                                });
+                            });
+                            let menus=[];
+                            pers.forEach(function (p) {
+                                menus.push({
+                                    id:p.sysno,
+                                    name:p.menupath,
+                                    path:p.menupath,
+                                    icon:p.menuicon,
+                                    title:p.permissionName,
+                                    parent:p.parentSysno,
+                                    children:[]
+                                });
+                            });
+
+
+
+                            entity.menus=this.menuchilren(menus,0);
+                            console.log(entity.menus.length);
+                            sessionStorage.setItem('user',JSON.stringify(data.data));
                             this.$router.push({path:'/'});
                         }
                     });
@@ -68,7 +116,7 @@ export default {
         },
         test(){
             login({account:'admin'}).then(data=>{
-                
+
             });
             console.log(res);
         }

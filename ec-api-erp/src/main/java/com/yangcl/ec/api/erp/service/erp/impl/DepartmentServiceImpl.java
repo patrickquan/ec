@@ -6,6 +6,9 @@ import com.yangcl.ec.common.entity.erp.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
 
@@ -24,7 +27,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentMapper.update(department);
     }
 
-    public Department getBySysno(long sysno) {
+    public Department get(long sysno) {
         return departmentMapper.get(sysno);
+    }
+
+    public List<Department> select(Map<String, Object> condition) {
+        return departmentMapper.select(condition);
     }
 }

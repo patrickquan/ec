@@ -5,14 +5,14 @@
         <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="loginname" property="loginName" jdbcType="VARCHAR" />
         <result column="loginpwd" property="loginPwd" jdbcType="VARCHAR" />
-        <result column="lastlogintime" property="lastLoginTime" jdbcType="DATE" />
+        <result column="lastlogintime" property="lastLoginTime" jdbcType="TIMESTAMP" />
         <result column="lastloginip" property="lastLoginIp" jdbcType="VARCHAR" />
         <result column="loginlock" property="loginLock" jdbcType="BIT" />
         <result column="status" property="status" jdbcType="INTEGER" />
         <result column="isdel" property="isDel" jdbcType="BIT" />
         <result column="version" property="version" jdbcType="INTEGER" />
-        <result column="createdat" property="createdAt" jdbcType="DATE" />
-        <result column="updatedat" property="updatedAt" jdbcType="DATE" />
+        <result column="createdat" property="createdAt" jdbcType="TIMESTAMP" />
+        <result column="updatedat" property="updatedAt" jdbcType="TIMESTAMP" />
         <association property="employee" column="employee_sysno" select="com.yangcl.ec.api.erp.mapper.EmployeeMapper.get"/>
         <collection property="roles" column="sysno" select="com.yangcl.ec.api.erp.mapper.RoleMapper.selectByUserSysno"/>
     </resultMap>
@@ -47,8 +47,14 @@
             <if test="loginName!=null">
                 AND loginname=#{loginName}
             </if>
+            <if test="loginPwd!=null">
+                AND loginpwd=#{loginPwd}
+            </if>
             <if test="status!=null">
                 AND `status`=#{status}
+            </if>
+            <if test="isDel!=null">
+                AND isdel=#{isDel}
             </if>
         </where>
     </select>
