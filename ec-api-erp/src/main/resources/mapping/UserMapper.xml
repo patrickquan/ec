@@ -42,15 +42,15 @@
     <select id="select" resultMap="UserResultMap" parameterType="java.util.Map">
         SELECT
         <include refid="UserColumns" />
-        FROM system_user WHERE 1=1
-        <choose>
-            <when test="loginName!=null">
+        FROM system_user
+        <where>
+            <if test="loginName!=null">
                 AND loginname=#{loginName}
-            </when>
-            <when test="status!=null">
+            </if>
+            <if test="status!=null">
                 AND `status`=#{status}
-            </when>
-        </choose>
+            </if>
+        </where>
     </select>
 
 </mapper>

@@ -38,15 +38,15 @@
     <select id="select" resultMap="RoleResultMap" parameterType="java.util.Map">
         SELECT
         <include refid="RoleColumns"/>
-        FROM system_role WHERE 1=1
-        <choose>
-            <when test="roleName!=null">
+        FROM system_role
+        <where>
+            <if test="roleName!=null">
                 AND roleName LIKE CONCAT('%',#{roleName},'%')
-            </when>
-            <when test="status!=null AND status!=-1">
+            </if>
+            <if test="status!=null AND status!=-1">
                 AND status=#{status}
-            </when>
-        </choose>
+            </if>
+        </where>
     </select>
     <select id="selectByUserSysno" resultMap="RoleResultMap" parameterType="long">
         SELECT

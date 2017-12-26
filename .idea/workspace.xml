@@ -4,6 +4,8 @@
     <list default="true" id="e7b4e564-43f5-475d-ad86-e46f26c6b465" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,9 +41,15 @@
       <file leaf-file-name="DepartmentMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/DepartmentMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="223">
               <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-              <folding />
+              <folding>
+                <marker date="1514203723397" expanded="true" signature="1331:1539" ph="INSERT INTO system_department... " />
+                <marker date="1514203723397" expanded="true" signature="1607:1657" ph="DELETE FROM " />
+                <marker date="1514203723397" expanded="true" signature="1764:1994" ph="UPDATE syste... " />
+                <marker date="1514203723397" expanded="true" signature="2093:2224" ph="select from system_department" />
+                <marker date="1514203723397" expanded="true" signature="2334:2434" ph="SELECT FROM system_department" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,13 +57,13 @@
       <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="99" lean-forward="false" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="99" />
+            <state relative-caret-position="1196">
+              <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
               <folding>
-                <marker date="1514217796551" expanded="true" signature="1654:1960" ph="INSERT INTO system_user... " />
-                <marker date="1514217796551" expanded="true" signature="2029:2070" ph="DELETE FROM " />
-                <marker date="1514217796551" expanded="true" signature="2171:2477" ph="UPDATE FROM " />
-                <marker date="1514217796551" expanded="true" signature="2570:2688" ph="select from system_user" />
+                <marker date="1514270431403" expanded="true" signature="1654:1960" ph="INSERT INTO system_user... " />
+                <marker date="1514270431403" expanded="true" signature="2029:2070" ph="DELETE FROM " />
+                <marker date="1514270431403" expanded="true" signature="2171:2477" ph="UPDATE FROM " />
+                <marker date="1514270431403" expanded="true" signature="2570:2688" ph="select from system_user" />
               </folding>
             </state>
           </provider>
@@ -64,15 +72,15 @@
       <file leaf-file-name="RoleMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-712">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="430">
+              <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding>
-                <marker date="1514217390123" expanded="true" signature="1342:1558" ph="INSERT INTO system_role... " />
-                <marker date="1514217390123" expanded="true" signature="1627:1671" ph="DELETE FROM " />
-                <marker date="1514217390123" expanded="true" signature="1772:1971" ph="UPDATE FROM " />
-                <marker date="1514217390123" expanded="true" signature="2063:2154" ph="SELECT FROM system_role" />
-                <marker date="1514217390123" expanded="true" signature="2713:2885" ph="SELECT FROM system_role" />
-                <marker date="1514217390123" expanded="true" signature="2997:3181" ph="SELECT FROM system_role" />
+                <marker date="1514270382241" expanded="true" signature="1342:1558" ph="INSERT INTO system_role... " />
+                <marker date="1514270382241" expanded="true" signature="1627:1671" ph="DELETE FROM " />
+                <marker date="1514270382241" expanded="true" signature="1772:1971" ph="UPDATE FROM " />
+                <marker date="1514270382241" expanded="true" signature="2063:2154" ph="SELECT FROM system_role" />
+                <marker date="1514270382241" expanded="true" signature="2693:2865" ph="SELECT FROM system_role" />
+                <marker date="1514270382241" expanded="true" signature="2977:3161" ph="SELECT FROM system_role" />
               </folding>
             </state>
           </provider>
@@ -81,7 +89,7 @@
       <file leaf-file-name="TestController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/TestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="115">
               <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding />
             </state>
@@ -91,7 +99,7 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="92">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="15" />
               <folding />
             </state>
@@ -101,11 +109,27 @@
       <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="690">
+              <caret line="32" column="84" lean-forward="true" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1463#1478#0" expanded="true" />
+                <element signature="e#1584#1599#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="637">
+              <caret line="55" column="98" lean-forward="false" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
+              <folding>
+                <marker date="1514270389270" expanded="true" signature="2805:3136" ph="INSERT INTO system_employee... " />
+                <marker date="1514270389270" expanded="true" signature="3205:3253" ph="DELETE FROM " />
+                <marker date="1514270389270" expanded="true" signature="3358:3689" ph="UPDATE FROM " />
+                <marker date="1514270389270" expanded="true" signature="3785:3974" ph="SELECT FROM system_employee" />
+                <marker date="1514270389270" expanded="true" signature="4625:4839" ph="SELECT sysno... system_employee" />
               </folding>
             </state>
           </provider>
@@ -114,7 +138,7 @@
       <file leaf-file-name="InvocableHandlerMethod.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.6.RELEASE/spring-web-4.2.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="2829">
               <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding />
             </state>
@@ -124,7 +148,7 @@
       <file leaf-file-name="DispatcherServlet.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.6.RELEASE/spring-webmvc-4.2.6.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
+            <state relative-caret-position="9430">
               <caret line="459" column="0" lean-forward="false" selection-start-line="459" selection-start-column="0" selection-end-line="459" selection-end-column="0" />
               <folding />
             </state>
@@ -134,10 +158,10 @@
       <file leaf-file-name="PermissionMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/PermissionMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1514217390120" expanded="true" signature="1728:1924" ph="SELECT FROM system_permission" />
+                <marker date="1514201908613" expanded="true" signature="1728:1924" ph="SELECT FROM system_permission" />
               </folding>
             </state>
           </provider>
@@ -208,8 +232,6 @@
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/erp/impl/EmployeeServiceImpl.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/TestController.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/PermissionMapper.xml" />
-        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml" />
-        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/DepartmentMapper.xml" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/mapper/DepartmentMapper.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/mapper/EmployeeMapper.java" />
@@ -224,8 +246,10 @@
         <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/Permission.java" />
         <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/Role.java" />
         <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/User.java" />
-        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.6.RELEASE/spring-web-4.2.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class" />
+        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml" />
+        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml" />
+        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java" />
       </list>
     </option>
@@ -243,8 +267,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -289,7 +313,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,85 +321,12 @@
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
               <item name="ec" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -660,14 +611,15 @@
       <workItem from="1514180229462" duration="13598000" />
       <workItem from="1514204699708" duration="373000" />
       <workItem from="1514217432190" duration="532000" />
+      <workItem from="1514246912636" duration="1588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62739000" />
+    <option name="totallyTimeSpent" value="64327000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -677,14 +629,14 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13854167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3195767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13828126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11399371" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -892,16 +844,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/DepartmentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/mapper/DepartmentMapper.java" />
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml" />
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/mapper/EmployeeMapper.java" />
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/mapper/PermissionMapper.java" />
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/mapper/RoleMapper.java" />
@@ -913,13 +856,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/erp/impl/DepartmentServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/Default.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/Default.java" />
     <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/BaseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -963,47 +900,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/erp/impl/UserServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/PermissionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1514217390120" expanded="true" signature="1728:1924" ph="SELECT FROM system_permission" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="99" lean-forward="false" selection-start-line="16" selection-start-column="99" selection-end-line="16" selection-end-column="99" />
-          <folding>
-            <marker date="1514217796551" expanded="true" signature="1654:1960" ph="INSERT INTO system_user... " />
-            <marker date="1514217796551" expanded="true" signature="2029:2070" ph="DELETE FROM " />
-            <marker date="1514217796551" expanded="true" signature="2171:2477" ph="UPDATE FROM " />
-            <marker date="1514217796551" expanded="true" signature="2570:2688" ph="select from system_user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-712">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1514217390123" expanded="true" signature="1342:1558" ph="INSERT INTO system_role... " />
-            <marker date="1514217390123" expanded="true" signature="1627:1671" ph="DELETE FROM " />
-            <marker date="1514217390123" expanded="true" signature="1772:1971" ph="UPDATE FROM " />
-            <marker date="1514217390123" expanded="true" signature="2063:2154" ph="SELECT FROM system_role" />
-            <marker date="1514217390123" expanded="true" signature="2713:2885" ph="SELECT FROM system_role" />
-            <marker date="1514217390123" expanded="true" signature="2997:3181" ph="SELECT FROM system_role" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="115">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
@@ -1011,7 +910,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="92">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="15" />
           <folding />
         </state>
@@ -1019,7 +918,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.6.RELEASE/spring-web-4.2.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="2829">
           <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
@@ -1027,19 +926,85 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.6.RELEASE/spring-webmvc-4.2.6.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="9430">
           <caret line="459" column="0" lean-forward="false" selection-start-line="459" selection-start-column="0" selection-end-line="459" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/DepartmentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <marker date="1514203723397" expanded="true" signature="1331:1539" ph="INSERT INTO system_department... " />
+            <marker date="1514203723397" expanded="true" signature="1607:1657" ph="DELETE FROM " />
+            <marker date="1514203723397" expanded="true" signature="1764:1994" ph="UPDATE syste... " />
+            <marker date="1514203723397" expanded="true" signature="2093:2224" ph="select from system_department" />
+            <marker date="1514203723397" expanded="true" signature="2334:2434" ph="SELECT FROM system_department" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/PermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1514201908613" expanded="true" signature="1728:1924" ph="SELECT FROM system_permission" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/EmployeeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="55" column="98" lean-forward="false" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
+          <folding>
+            <marker date="1514270389270" expanded="true" signature="2805:3136" ph="INSERT INTO system_employee... " />
+            <marker date="1514270389270" expanded="true" signature="3205:3253" ph="DELETE FROM " />
+            <marker date="1514270389270" expanded="true" signature="3358:3689" ph="UPDATE FROM " />
+            <marker date="1514270389270" expanded="true" signature="3785:3974" ph="SELECT FROM system_employee" />
+            <marker date="1514270389270" expanded="true" signature="4625:4839" ph="SELECT sysno... system_employee" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/RoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding>
+            <marker date="1514270382241" expanded="true" signature="1342:1558" ph="INSERT INTO system_role... " />
+            <marker date="1514270382241" expanded="true" signature="1627:1671" ph="DELETE FROM " />
+            <marker date="1514270382241" expanded="true" signature="1772:1971" ph="UPDATE FROM " />
+            <marker date="1514270382241" expanded="true" signature="2063:2154" ph="SELECT FROM system_role" />
+            <marker date="1514270382241" expanded="true" signature="2693:2865" ph="SELECT FROM system_role" />
+            <marker date="1514270382241" expanded="true" signature="2977:3161" ph="SELECT FROM system_role" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding>
+            <marker date="1514270431403" expanded="true" signature="1654:1960" ph="INSERT INTO system_user... " />
+            <marker date="1514270431403" expanded="true" signature="2029:2070" ph="DELETE FROM " />
+            <marker date="1514270431403" expanded="true" signature="2171:2477" ph="UPDATE FROM " />
+            <marker date="1514270431403" expanded="true" signature="2570:2688" ph="select from system_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="690">
+          <caret line="32" column="84" lean-forward="true" selection-start-line="32" selection-start-column="84" selection-end-line="32" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1463#1478#0" expanded="true" />
+            <element signature="e#1584#1599#0" expanded="true" />
           </folding>
         </state>
       </provider>

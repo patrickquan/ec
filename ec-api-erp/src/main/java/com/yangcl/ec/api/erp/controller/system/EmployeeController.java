@@ -28,6 +28,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "/employees",method = RequestMethod.GET)
     public PageInfo<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
+                                              @RequestParam(value = "employeesex",required = false) Integer employeeSex,
                                               @RequestParam(value = "pageNo",required = false) Integer pageNo,
                                               @RequestParam(value = "pageSize",required = false) Integer pageSize){
         pageNo=pageNo==null?1:pageNo;
@@ -37,6 +38,9 @@ public class EmployeeController {
         where.put("pageSize",pageSize);
         if(employeeName!=null && employeeName!=""){
             where.put("employeeName",employeeName);
+        }
+        if(employeeSex!=null){
+            where.put("employeeSex",employeeSex);
         }
         return employeeService.select(where);
     }

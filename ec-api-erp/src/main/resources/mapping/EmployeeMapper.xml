@@ -53,15 +53,15 @@
     <select id="select" resultMap="EmployeeResultMap" parameterType="java.util.Map">
         SELECT
         <include refid="EmployeeColumns"/>
-        FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno WHERE 1=1
-        <choose>
-            <when test="employeeName!=null">
+        FROM system_employee emp LEFT JOIN system_department dpm ON emp.department_sysno=dpm.sysno
+        <where>
+            <if test="employeeName!=null">
                 AND emp.employeename LIKE CONCAT('%',#{employeeName},'%')
-            </when>
-            <when test="employeeSex!=null">
+            </if>
+            <if test="employeeSex!=null">
                 AND emp.employeesex=#{employeeSex}
-            </when>
-        </choose>
+            </if>
+        </where>
     </select>
     <select id="selectByDepartmentSysNo" resultMap="EmployeeResultMap" parameterType="long">
         SELECT
