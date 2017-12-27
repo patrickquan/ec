@@ -24,8 +24,8 @@ export default {
         return {
             logining: false,
             loginForm: {
-                loginuser: '',
-                loginpwd: ''
+                loginuser: 'admin',
+                loginpwd: '123456'
             },
             loginRules: {
                 loginuser: [
@@ -45,15 +45,18 @@ export default {
         menuchilren(data,pid){
             var result=[],temp;
             for(var i in data){
+                //console.log(data[i].parent+"="+pid);
                 if(data[i].parent==pid){
                     data[i]=data[i];
                     result.push(data[i]);
                     temp=this.menuchilren(data,data[i].id);
+                    //console.log(JSON.stringify(temp));
                     if(temp.length>0){
                         data[i].children=temp;
                     }
                 }
             }
+            return result;
         },
         loginIn(ev) {
             this.$refs.loginForm.validate((valid) => {
@@ -90,22 +93,24 @@ export default {
                             });
                             let menus=[];
                             pers.forEach(function (p) {
-                                menus.push({
+                                if(p.permissionType==1){
+                                  menus.push({
                                     id:p.sysno,
-                                    name:p.menupath,
-                                    path:p.menupath,
-                                    icon:p.menuicon,
+                                    name:p.menuPath,
+                                    path:p.menuPath==null?"":p.menuPath,
+                                    icon:p.menuIcon==null?"":p.menuIcon,
                                     title:p.permissionName,
                                     parent:p.parentSysno,
                                     children:[]
-                                });
+                                  });
+                                }
                             });
 
 
-
-                            entity.menus=this.menuchilren(menus,0);
-                            console.log(entity.menus.length);
-                            sessionStorage.setItem('user',JSON.stringify(data.data));
+                            entity.menus=this.menuchilren(menus,-1);
+                            entity.roles=[];
+                            console.log(JSON.stringify(menus));
+                            sessionStorage.setItem('user',JSON.stringify(entity));
                             this.$router.push({path:'/'});
                         }
                     });

@@ -41,7 +41,7 @@ router.beforeEach((to,from,next)=>{
         	next();
         }else{
         	next('/message');
-        }		
+        }
 	}else{
 		next();
 	}
