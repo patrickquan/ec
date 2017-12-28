@@ -1,11 +1,15 @@
 package com.yangcl.ec.api.erp.controller.system;
 
+import com.yangcl.ec.api.erp.service.authentication.AuthService;
 import com.yangcl.ec.api.erp.service.authentication.LoginService;
 import com.yangcl.ec.api.erp.service.erp.UserService;
 import com.yangcl.ec.common.entity.erp.User;
 import com.yangcl.ec.common.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8080",maxAge = 3600)
@@ -15,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    private LoginService loginService;
+    private AuthService authService;
 
     @RequestMapping(value = "/login2",method = RequestMethod.POST)
     public JsonResult<User> userLogin(@RequestParam(value = "loginname",required = false) String loginName,
@@ -45,6 +49,11 @@ public class UserController {
         }
 
         User result=userService.getByUsernameAndPassword(user.getLoginName(),user.getLoginPwd());
+        Map<String,Object> claims=new HashMap<String,Object>();
+        claims.put("sub",user.getLoginName());
+        claims.put("roles",user.getRoles());
+        String token=authService.createToken(claims);
+
         if(result==null){
             return new JsonResult<User>("401","帐号或密码错误，登录失败！");
         }else{
