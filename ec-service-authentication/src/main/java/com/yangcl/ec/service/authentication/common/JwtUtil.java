@@ -62,8 +62,8 @@ public class JwtUtil {
     * @return
     */
    public Boolean validateToken(String token){
-      final String account=getAccountFromToken(token);
-      return false;
+      Boolean result=(!isTokenExpired(token));
+      return result;
    }
 
    /**
@@ -156,7 +156,8 @@ public class JwtUtil {
     */
    private Boolean isTokenExpired(String token){
       final Date expiration=getExpirationDateFromToken(token);
-      Boolean result=expiration.before(new Date());
-      return result;
+      if(expiration==null)
+         return true;
+      return expiration.before(new Date());
    }
 }

@@ -17,7 +17,7 @@ public class User extends BaseEntity {
     private Date lastLoginTime;
     private String lastLoginIp;
     private Boolean loginLock;
-    private List<Role> roles;
+    private List<com.yangcl.ec.common.entity.erp.Role> roles;
     private Long employeeSysno;
 
     public Long getSysno() {
@@ -76,11 +76,11 @@ public class User extends BaseEntity {
         this.loginLock = loginLock;
     }
 
-    public List<Role> getRoles() {
+    public List<com.yangcl.ec.common.entity.erp.Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(List<com.yangcl.ec.common.entity.erp.Role> roles) {
         this.roles = roles;
     }
 

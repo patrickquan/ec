@@ -3,12 +3,14 @@ package com.yangcl.ec.api.erp.controller.system;
 import com.yangcl.ec.api.erp.service.authentication.AuthService;
 import com.yangcl.ec.api.erp.service.authentication.LoginService;
 import com.yangcl.ec.api.erp.service.erp.UserService;
+import com.yangcl.ec.common.entity.erp.Role;
 import com.yangcl.ec.common.entity.erp.User;
 import com.yangcl.ec.common.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -39,6 +41,16 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public String test(@RequestParam(value = "token",required = false) String token){
+        if(token==null)
+            token=authService.createToken(new HashMap<String,Object>());
+
+        Boolean isToken=authService.validateToken(token);
+
+        return isToken.toString();
+    }
+
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public JsonResult<User> userLogin(@RequestBody User user){
         if(user==null || user.getLoginName()==null || user.getLoginName()==""){
@@ -50,14 +62,15 @@ public class UserController {
 
         User result=userService.getByUsernameAndPassword(user.getLoginName(),user.getLoginPwd());
         Map<String,Object> claims=new HashMap<String,Object>();
-        claims.put("sub",user.getLoginName());
-        claims.put("roles",user.getRoles());
+        claims.put("sub",result.getLoginName());
+        List<Role> roles=result.getRoles();
+        claims.put("roles",roles);
         String token=authService.createToken(claims);
 
         if(result==null){
             return new JsonResult<User>("401","帐号或密码错误，登录失败！");
         }else{
-            return new JsonResult<User>("200","登录成功！",result);
+            return new JsonResult<User>("200","登录成功！",token,result);
         }
     }
 }

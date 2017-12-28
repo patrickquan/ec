@@ -4,10 +4,7 @@ import com.yangcl.ec.common.entity.erp.Permission;
 import com.yangcl.ec.service.authentication.common.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,8 +22,8 @@ public class AuthController {
      * @param claims
      * @return
      */
-    @RequestMapping(value = "/auth/token/create",method = RequestMethod.GET)
-    public String createToken(@RequestParam Map<String,Object> claims){
+    @RequestMapping(value = "/auth/token/create",method = RequestMethod.POST)
+    public String createToken(@RequestBody Map<String,Object> claims){
         String token=jwtUtil.createdToken(claims);
         return token;
     }
@@ -36,8 +33,8 @@ public class AuthController {
      * @param token
      * @return
      */
-    @RequestMapping(value = "/auth/token/validate",method = RequestMethod.GET)
-    public Boolean validateToken(@RequestParam  String token){
+    @RequestMapping(value = "/auth/token/validate",method = RequestMethod.POST)
+    public Boolean validateToken(@RequestBody String token){
         return jwtUtil.validateToken(token);
     }
 
@@ -47,7 +44,7 @@ public class AuthController {
      * @param key
      * @return
      */
-    @RequestMapping(value = "/auth/token/value",method = RequestMethod.GET)
+    @RequestMapping(value = "/auth/token/value",method = RequestMethod.POST)
     public Object getValueFromToken(@RequestParam String token,@RequestParam String key){
         return jwtUtil.getValueFromToken(token,key);
     }

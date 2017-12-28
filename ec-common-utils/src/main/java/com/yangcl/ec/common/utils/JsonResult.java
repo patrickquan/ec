@@ -1,33 +1,37 @@
 package com.yangcl.ec.common.utils;
 
 public class JsonResult<T> {
+    //返回码
     private String code;
-    private String status;
+    //返回消息
     private String message;
+    //返回token
+    private String token;
+    //返回对象
     private T entity;
 
     public JsonResult(String code,String message){
         this.code=code;
-        this.status="";
         this.message=message;
+        this.token="";
         this.entity=null;
     }
-    public JsonResult(String code,String status,String message){
+    public JsonResult(String code,String message,String token){
         this.code=code;
-        this.status=status;
         this.message=message;
+        this.token=token;
         this.entity=null;
     }
     public JsonResult(String code,String message,T data){
         this.code=code;
-        this.status="";
         this.message=message;
+        this.token="";
         this.entity=data;
     }
-    public JsonResult(String code,String status,String message,T data){
+    public JsonResult(String code,String message,String token,T data){
         this.code=code;
-        this.status=status;
         this.message=message;
+        this.token=token;
         this.entity=data;
     }
 
@@ -39,20 +43,20 @@ public class JsonResult<T> {
         this.code = code;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getMessage() {
         return message;
     }
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public T getEntity() {
@@ -62,4 +66,6 @@ public class JsonResult<T> {
     public void setEntity(T data) {
         this.entity = data;
     }
+
+
 }
