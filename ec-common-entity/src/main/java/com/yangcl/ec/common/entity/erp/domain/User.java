@@ -1,15 +1,13 @@
-package com.yangcl.ec.common.entity.erp;
+package com.yangcl.ec.common.entity.erp.domain;
 
-import com.yangcl.ec.common.entity.BaseEntity;
-
-import javax.management.relation.Role;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
  * 帐户实体类
  */
-public class User extends BaseEntity {
+public class User extends BaseDomain {
     private Long sysno;
     private Employee employee;
     private String loginName;
@@ -17,8 +15,21 @@ public class User extends BaseEntity {
     private Date lastLoginTime;
     private String lastLoginIp;
     private Boolean loginLock;
-    private List<com.yangcl.ec.common.entity.erp.Role> roles;
+    private List<Role> roles;
     private Long employeeSysno;
+
+    //取得所有权限
+    public List<String> getPermissionStringList(){
+        List<String> result=new ArrayList<String>();
+        for (Role r:roles) {
+            for (Permission p:r.getPermissions()){
+                if(!result.contains(p.getResource())){
+                    result.add(p.getResource());
+                }
+            }
+        }
+        return result;
+    }
 
     public Long getSysno() {
         return sysno;
@@ -76,11 +87,11 @@ public class User extends BaseEntity {
         this.loginLock = loginLock;
     }
 
-    public List<com.yangcl.ec.common.entity.erp.Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<com.yangcl.ec.common.entity.erp.Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 

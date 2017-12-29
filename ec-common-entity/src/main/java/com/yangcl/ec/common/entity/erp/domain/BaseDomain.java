@@ -1,8 +1,8 @@
-package com.yangcl.ec.common.entity;
+package com.yangcl.ec.common.entity.erp.domain;
 
 import java.util.Date;
 
-public class BaseEntity {
+public class BaseDomain {
     private Integer  status;
     private Boolean isDel;
     private Integer  version;

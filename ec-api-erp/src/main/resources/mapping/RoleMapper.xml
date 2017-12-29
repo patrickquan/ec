@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yangcl.ec.api.erp.mapper.RoleMapper" >
-    <resultMap id="RoleResultMap" type="com.yangcl.ec.common.entity.erp.Role" >
+    <resultMap id="RoleResultMap" type="com.yangcl.ec.common.entity.erp.domain.Role" >
         <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="roleno" property="roleNo" jdbcType="VARCHAR" />
         <result column="rolename" property="roleName" jdbcType="VARCHAR" />
@@ -19,7 +19,7 @@
     <sql id="RoleColumns">
         sysno,roleno,rolename,roledesc,status,isdel,version,createdat,updatedat
     </sql>
-    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.Role">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.domain.Role">
         INSERT INTO system_role
         (roleno,rolename,roledesc,`status`,isdel,version,createdat,updatedat)
         VALUES
@@ -28,7 +28,7 @@
     <delete id="delete" parameterType="long">
         DELETE FROM system_role WHERE sysno=#{sysno}
     </delete>
-    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.Role">
+    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.domain.Role">
         UPDATE FROM system_role SET
         roleno=#{roleNo},rolename=#{roleName},roledesc=#{roleDesc},`status`=#{status},isdel=#{isDel},version=#{version},updatedat=#{updatedAt}
         WHERE sysno=#{sysno}

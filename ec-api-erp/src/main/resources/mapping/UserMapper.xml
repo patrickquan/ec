@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yangcl.ec.api.erp.mapper.UserMapper" >
-    <resultMap id="UserResultMap" type="com.yangcl.ec.common.entity.erp.User" >
+    <resultMap id="UserResultMap" type="com.yangcl.ec.common.entity.erp.domain.User" >
         <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="loginname" property="loginName" jdbcType="VARCHAR" />
         <result column="loginpwd" property="loginPwd" jdbcType="VARCHAR" />
@@ -17,9 +17,9 @@
         <collection property="roles" column="sysno" select="com.yangcl.ec.api.erp.mapper.RoleMapper.selectByUserSysno"/>
     </resultMap>
     <sql id="UserColumns" >
-        sysno,loginname,loginpwd,lastlogintime,lastloginip,loginlock,`status`,isdel,version,createdat,updatedat
+        sysno,loginname,loginpwd,lastlogintime,employee_sysno,lastloginip,loginlock,`status`,isdel,version,createdat,updatedat
     </sql>
-    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.User">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="sysno" parameterType="com.yangcl.ec.common.entity.erp.domain.User">
         INSERT INTO system_user (employee_sysno,loginname,loginpwd,lastlogintime,lastloginip,loginlock,`status`,isdel,version,createdat,updatedat)
         VALUES
         (#{employeeSysno},#{loginName},#{loginPwd},#{lastLoginTime},#{lastLoginIp},#{loginLock},#{status},#{isdel},#{version},#{createdAt},#{updatedAt})
@@ -27,7 +27,7 @@
     <delete id="delete" parameterType="long">
         DELETE FROM sys_user WHERE sysno=#{sysno}
     </delete>
-    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.User">
+    <update id="update" parameterType="com.yangcl.ec.common.entity.erp.domain.User">
         UPDATE FROM system_user SET
         employee_sysno=#{employeeSysno},loginname=#{loginName},loginpwd=#{loginPwd},lastlogintime=#{lastLoginTime},lastloginip=#{lastLoginIp},
         loginlock=#{loginLock},`status`=#{status},isdel=#{isDel},version=#{version},updatedat=#{updatedAt}

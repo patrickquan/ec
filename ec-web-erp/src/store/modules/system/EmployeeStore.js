@@ -5,17 +5,17 @@ import {getEmployeeList} from '@/service/api';
 //状态
 const state={
 	//员工列表state
-	employees:[], 
+	employees:[],
 	//表格选择行数据
 	selects:[],
 	//总记录数
-	total:0, 
+	total:0,
 	//当前页
-	currentPage:1, 
+	currentPage:1,
 	//每页显示记录数
-	pageSize:10, 
+	pageSize:10,
 	//表格加载状态
-	listLoading:false, 
+	listLoading:false,
 	//过滤条件
 	filters:{
 		employeename:'',
@@ -80,9 +80,10 @@ const actions={
 };
 
 //mutations
-const mutations={loadList(state,param){
+const mutations={
+  loadList(state,param){
 		state.total=param.total;
-		state.employees=param.employees;
+		state.employees=param.rows;
 	},
 	//表格载入状态变更
 	listLoading(state,isShow){
@@ -105,7 +106,7 @@ const mutations={loadList(state,param){
 		state.filters=filters;
 	}
 	//员工列表数据状态变更
-	
+
 };
 
 //导出

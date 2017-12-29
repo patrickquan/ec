@@ -1,13 +1,9 @@
-package com.yangcl.ec.common.entity.erp;
-
-import com.yangcl.ec.common.entity.BaseEntity;
-
-import java.util.List;
+package com.yangcl.ec.common.entity.erp.domain;
 
 /**
  * 权限实体类
  */
-public class Permission extends BaseEntity {
+public class Permission extends BaseDomain {
     private Long sysno;
     private String permissionNo;
     private String permissionName;

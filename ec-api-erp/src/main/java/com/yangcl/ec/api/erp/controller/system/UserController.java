@@ -1,11 +1,12 @@
 package com.yangcl.ec.api.erp.controller.system;
 
 import com.yangcl.ec.api.erp.service.authentication.AuthService;
-import com.yangcl.ec.api.erp.service.authentication.LoginService;
 import com.yangcl.ec.api.erp.service.erp.UserService;
-import com.yangcl.ec.common.entity.erp.Role;
-import com.yangcl.ec.common.entity.erp.User;
-import com.yangcl.ec.common.utils.JsonResult;
+import com.yangcl.ec.common.entity.erp.domain.Role;
+import com.yangcl.ec.common.entity.erp.domain.User;
+import com.yangcl.ec.common.entity.common.JsonResult;
+import com.yangcl.ec.common.entity.common.LoginAccount;
+import com.yangcl.ec.common.entity.erp.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,25 +53,32 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public JsonResult<User> userLogin(@RequestBody User user){
+    public JsonResult<UserDto> userLogin(@RequestBody User user){
         if(user==null || user.getLoginName()==null || user.getLoginName()==""){
-            return new JsonResult<User>("401","帐号不能为空！");
+            return new JsonResult<UserDto>("401","帐号不能为空！");
         }
         if(user==null || user.getLoginPwd()==null || user.getLoginPwd()==""){
-            return new JsonResult<User>("401","密码不能为空！");
+            return new JsonResult<UserDto>("401","密码不能为空！");
         }
 
         User result=userService.getByUsernameAndPassword(user.getLoginName(),user.getLoginPwd());
-        Map<String,Object> claims=new HashMap<String,Object>();
-        claims.put("sub",result.getLoginName());
-        List<Role> roles=result.getRoles();
-        claims.put("roles",roles);
-        String token=authService.createToken(claims);
+
 
         if(result==null){
-            return new JsonResult<User>("401","帐号或密码错误，登录失败！");
+            return new JsonResult<UserDto>("401","帐号或密码错误，登录失败！");
         }else{
-            return new JsonResult<User>("200","登录成功！",token,result);
+            //创建DTO对象
+            UserDto userDto=new UserDto();
+            userDto.setUserId(result.getSysno().toString());
+            userDto.setUserName(result.getEmployee().getEmployeeName());
+            userDto.setLoginName(result.getLoginName());
+            userDto.setMenus(result.getRoles());
+            //创建token
+            Map<String,Object> claims=new HashMap<String,Object>();
+            claims.put("sub",userDto.getLoginName());
+            String token=authService.createToken(claims);
+            userDto.setToken(token);
+            return new JsonResult<UserDto>("200","登录成功！",token,userDto);
         }
     }
 }

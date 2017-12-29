@@ -1,13 +1,11 @@
-package com.yangcl.ec.common.entity.erp;
-
-import com.yangcl.ec.common.entity.BaseEntity;
+package com.yangcl.ec.common.entity.erp.domain;
 
 import java.util.List;
 
 /**
  * 部门实体类
  */
-public class Department extends BaseEntity {
+public class Department extends BaseDomain {
     private Long sysno;
     private String departmentNo;
     private String departmentName;

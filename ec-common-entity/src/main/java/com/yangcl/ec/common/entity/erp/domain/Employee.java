@@ -1,6 +1,4 @@
-package com.yangcl.ec.common.entity.erp;
-
-import com.yangcl.ec.common.entity.BaseEntity;
+package com.yangcl.ec.common.entity.erp.domain;
 
 import java.util.Date;
 import java.util.List;
@@ -8,7 +6,7 @@ import java.util.List;
 /**
  * 员工实体类
  */
-public class Employee extends BaseEntity {
+public class Employee extends BaseDomain {
     private Long sysno;
     private Department department;
     private String employeeNo;

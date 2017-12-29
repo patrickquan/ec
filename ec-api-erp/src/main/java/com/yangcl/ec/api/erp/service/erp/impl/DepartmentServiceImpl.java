@@ -2,7 +2,7 @@ package com.yangcl.ec.api.erp.service.erp.impl;
 
 import com.yangcl.ec.api.erp.mapper.DepartmentMapper;
 import com.yangcl.ec.api.erp.service.erp.DepartmentService;
-import com.yangcl.ec.common.entity.erp.Department;
+import com.yangcl.ec.common.entity.erp.domain.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

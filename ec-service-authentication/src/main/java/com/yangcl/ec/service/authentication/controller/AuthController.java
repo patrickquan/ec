@@ -1,9 +1,9 @@
 package com.yangcl.ec.service.authentication.controller;
 
-import com.yangcl.ec.common.entity.erp.Permission;
+import com.yangcl.ec.common.entity.common.LoginAccount;
+import com.yangcl.ec.common.entity.erp.domain.Permission;
 import com.yangcl.ec.service.authentication.common.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,6 +25,17 @@ public class AuthController {
     @RequestMapping(value = "/auth/token/create",method = RequestMethod.POST)
     public String createToken(@RequestBody Map<String,Object> claims){
         String token=jwtUtil.createdToken(claims);
+        return token;
+    }
+
+    /**
+     * 创建token
+     * @param loginAccount
+     * @return
+     */
+    @RequestMapping(value = "/auth/token/create/loginaccount",method = RequestMethod.POST)
+    public String createdToken(@RequestBody LoginAccount loginAccount){
+        String token=jwtUtil.createdToken(loginAccount);
         return token;
     }
 

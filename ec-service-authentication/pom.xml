@@ -23,11 +23,6 @@
             <artifactId>ec-common-entity</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.yangcl.ec</groupId>
-            <artifactId>ec-common-utils</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <!--增加SpringBoot内部度量起步依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

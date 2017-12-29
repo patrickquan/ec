@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yangcl.ec.api.erp.mapper.PermissionMapper" >
-    <resultMap id="PermissionResultMap" type="com.yangcl.ec.common.entity.erp.Permission" >
+    <resultMap id="PermissionResultMap" type="com.yangcl.ec.common.entity.erp.domain.Permission" >
         <id column="sysno" property="sysno" jdbcType="BIGINT" />
         <result column="permissionno" property="permissionNo" jdbcType="VARCHAR" />
         <result column="permissionname" property="permissionName" jdbcType="VARCHAR" />

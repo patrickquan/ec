@@ -1,5 +1,6 @@
 package com.yangcl.ec.service.authentication.common;
 
+import com.yangcl.ec.common.entity.common.LoginAccount;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -14,6 +15,7 @@ import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -37,6 +39,22 @@ public class JwtUtil {
               .setExpiration(new Date(System.currentTimeMillis()+this.expiration*1000))
               .signWith(SignatureAlgorithm.HS256,this.secret)
               .compact();
+   }
+
+   /**
+    * 生成Token
+    * @param loginAccount
+    * @return
+    */
+   public String createdToken(LoginAccount loginAccount){
+      Map<String,Object> claims=new HashMap<String,Object>();
+      claims.put("accountId",loginAccount.getAccountId());
+      claims.put("accountName",loginAccount.getAccountName());
+      claims.put("username",loginAccount.getUsername());
+      claims.put("password",loginAccount.getPassword());
+      claims.put("otherName",loginAccount.getOtherName());
+      claims.put("permissions",loginAccount.getPermissions());
+      return this.createdToken(claims);
    }
 
    /**
@@ -67,6 +85,20 @@ public class JwtUtil {
    }
 
    /**
+    * 验证token
+    * @param token
+    * @param loginAccount
+    * @return
+    */
+   public Boolean validateToken(String token,LoginAccount loginAccount){
+      Boolean result=(
+              loginAccount.getAccountId().equals(this.getValueFromToken(token,"accountId"))
+              && loginAccount.getUsername().equals(this.getValueFromToken(token,"username"))
+              && !this.isTokenExpired(token));
+      return result;
+   }
+
+   /**
     * 从token中获取用户
     * @param token
     * @return
@@ -80,6 +112,29 @@ public class JwtUtil {
          account=null;
       }
       return account;
+   }
+
+   /**
+    * 从token中获取登录用户
+    * @param token
+    * @return
+    */
+   public LoginAccount getLoginAccountFromToken(String token){
+      LoginAccount loginAccount;
+      try{
+         final Claims claims=getClaimsFromToken(token);
+         loginAccount=new LoginAccount(
+                 claims.get("accountId").toString(),
+                 claims.get("accountName").toString(),
+                 claims.get("username").toString(),
+                 claims.get("password").toString(),
+                 claims.get("otherName").toString(),
+                 (List<String>)claims.get("permissions")
+         );
+      }catch (Exception err){
+         loginAccount=null;
+      }
+      return loginAccount;
    }
 
    /**

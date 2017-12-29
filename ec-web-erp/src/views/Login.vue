@@ -53,6 +53,8 @@ export default {
                     //console.log(JSON.stringify(temp));
                     if(temp.length>0){
                         data[i].children=temp;
+                    }else{
+                        data[i].children=[];
                     }
                 }
             }
@@ -73,43 +75,8 @@ export default {
                                 type:'error'
                             });
                         }else{
-                            let pers=[];
-                            entity.roles.forEach(function (r) {
-                                r.permissions.forEach(function (p) {
-                                    if(pers.length==0){
-                                        pers.push(p);
-                                    }else{
-                                        let isCheck=true;
-                                        pers.forEach(function (pr) {
-                                            if(pr.sysno===p.sysno){
-                                              isCheck=false;
-                                            }
-                                        });
-                                        if(isCheck){
-                                            pers.push(p);
-                                        }
-                                    }
-                                });
-                            });
-                            let menus=[];
-                            pers.forEach(function (p) {
-                                if(p.permissionType==1){
-                                  menus.push({
-                                    id:p.sysno,
-                                    name:p.menuPath,
-                                    path:p.menuPath==null?"":p.menuPath,
-                                    icon:p.menuIcon==null?"":p.menuIcon,
-                                    title:p.permissionName,
-                                    parent:p.parentSysno,
-                                    children:[]
-                                  });
-                                }
-                            });
-
-
-                            entity.menus=this.menuchilren(menus,-1);
-                            entity.roles=[];
-                            console.log(JSON.stringify(menus));
+                            entity.menus=this.menuchilren(entity.menus,-1);
+                            //console.log(JSON.stringify(entity));
                             sessionStorage.setItem('user',JSON.stringify(entity));
                             this.$router.push({path:'/'});
                         }

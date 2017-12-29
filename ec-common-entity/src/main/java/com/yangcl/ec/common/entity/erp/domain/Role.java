@@ -1,13 +1,11 @@
-package com.yangcl.ec.common.entity.erp;
-
-import com.yangcl.ec.common.entity.BaseEntity;
+package com.yangcl.ec.common.entity.erp.domain;
 
 import java.util.List;
 
 /**
  * 角色实体类
  */
-public class Role extends BaseEntity {
+public class Role extends BaseDomain {
     private Long sysno;
     private String roleNo;
     private String roleName;

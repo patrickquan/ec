@@ -1,6 +1,6 @@
 package com.yangcl.ec.api.erp.service.erp;
 
-import com.yangcl.ec.common.entity.erp.Role;
+import com.yangcl.ec.common.entity.erp.domain.Role;
 
 import java.util.List;
 import java.util.Map;

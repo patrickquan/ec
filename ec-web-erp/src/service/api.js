@@ -7,7 +7,11 @@ axios.defaults.timeout = 5000;
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
-        config.headers.Authorization = '12312312312313';
+        let user=JSON.parse(sessionStorage.getItem('user'));
+        if(user!=null && user.token!=''){
+          console.log(JSON.stringify(user));
+          config.headers.Authorization = user.token;
+        }
         return config;
     },
     err => {
@@ -48,7 +52,7 @@ export const removeDepartment = params => { return axios.get(`/system/department
 //修改部门
 export const editDepartment = params => { return axios.post(`/system/departments/edit`,params).then(res=>res.data); };
 //获取员工列表（分页）
-export const getEmployeeList = params => { return axios.get(`/system/employee/list`, { params: params }); };
+export const getEmployeeList = params => { return axios.get(`/system/employees`, { params: params }); };
 //新增员工
 export const addEmployee = params => { return axios.post(`/system/employee/add`, params).then(res=>res.data); };
 //删除员工

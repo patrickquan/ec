@@ -55,7 +55,7 @@ export default{
     },
     mounted(){
         let user=JSON.parse(sessionStorage.getItem('user'));
-        this.name=user.name;
+        this.name=user.userName;
     },
 		methods:{
 			  dropdownCommand(command){

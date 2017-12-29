@@ -1,21 +1,18 @@
 package com.yangcl.ec.api.erp.controller.system;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.yangcl.ec.api.erp.service.erp.EmployeeService;
-import com.yangcl.ec.common.entity.erp.Employee;
+import com.yangcl.ec.common.entity.common.JsonRowsResult;
+import com.yangcl.ec.common.entity.erp.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/system")
+@CrossOrigin(origins = "http://localhost:8080",maxAge = 3600)
 public class EmployeeController {
 
     @Autowired
@@ -27,10 +24,10 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/employees",method = RequestMethod.GET)
-    public PageInfo<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
-                                              @RequestParam(value = "employeesex",required = false) Integer employeeSex,
-                                              @RequestParam(value = "pageNo",required = false) Integer pageNo,
-                                              @RequestParam(value = "pageSize",required = false) Integer pageSize){
+    public JsonRowsResult<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
+                                          @RequestParam(value = "employeesex",required = false) Integer employeeSex,
+                                          @RequestParam(value = "pageNo",required = false) Integer pageNo,
+                                          @RequestParam(value = "pageSize",required = false) Integer pageSize){
         pageNo=pageNo==null?1:pageNo;
         pageSize=pageSize==null?10:pageSize;
         Map<String,Object> where=new HashMap<String,Object>();
@@ -42,6 +39,13 @@ public class EmployeeController {
         if(employeeSex!=null){
             where.put("employeeSex",employeeSex);
         }
-        return employeeService.select(where);
+        PageInfo<Employee> pageInfo=employeeService.select(where);
+        JsonRowsResult<Employee> rowsResult=new JsonRowsResult<Employee>();
+        rowsResult.setCode("200");
+        rowsResult.setMessage("查询成功");
+        rowsResult.setToken("");
+        rowsResult.setTotal(pageInfo.getTotal());
+        rowsResult.setRows(pageInfo.getList());
+        return rowsResult;
     }
 }

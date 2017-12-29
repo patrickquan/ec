@@ -2,12 +2,9 @@ package com.yangcl.ec.api.erp.service.erp.impl;
 
 import com.yangcl.ec.api.erp.mapper.UserMapper;
 import com.yangcl.ec.api.erp.service.erp.UserService;
-import com.yangcl.ec.common.entity.erp.User;
+import com.yangcl.ec.common.entity.erp.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;

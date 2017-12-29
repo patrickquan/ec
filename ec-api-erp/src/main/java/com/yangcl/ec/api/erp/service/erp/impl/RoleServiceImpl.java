@@ -2,7 +2,7 @@ package com.yangcl.ec.api.erp.service.erp.impl;
 
 import com.yangcl.ec.api.erp.mapper.RoleMapper;
 import com.yangcl.ec.api.erp.service.erp.RoleService;
-import com.yangcl.ec.common.entity.erp.Role;
+import com.yangcl.ec.common.entity.erp.domain.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

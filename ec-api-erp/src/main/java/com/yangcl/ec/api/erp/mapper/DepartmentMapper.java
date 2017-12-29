@@ -1,6 +1,6 @@
 package com.yangcl.ec.api.erp.mapper;
 
-import com.yangcl.ec.common.entity.erp.Department;
+import com.yangcl.ec.common.entity.erp.domain.Department;
 
 import java.util.List;
 import java.util.Map;

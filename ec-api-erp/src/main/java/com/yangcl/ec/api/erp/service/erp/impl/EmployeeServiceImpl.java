@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yangcl.ec.api.erp.mapper.EmployeeMapper;
 import com.yangcl.ec.api.erp.service.erp.EmployeeService;
-import com.yangcl.ec.common.entity.erp.Employee;
+import com.yangcl.ec.common.entity.erp.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
