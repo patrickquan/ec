@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/system")
-@CrossOrigin(origins = "http://localhost:8080",maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:8080",maxAge = 3600)
 public class EmployeeController {
 
     @Autowired

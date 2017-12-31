@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -26,51 +27,38 @@ public class ValidateTokenFilter implements Filter {
 
     public void init(FilterConfig filterConfig) throws ServletException {
         removes.add("info");
-        removes.add("test/login");
         removes.add("login");
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletResponse httpServletResponse=(HttpServletResponse)servletResponse;
-        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Authorization,Origin, X-Requested-With, Content-Type, Accept");
-        filterChain.doFilter(servletRequest,httpServletResponse);
-
-
-
-
-        /**
         HttpServletRequest request=(HttpServletRequest)servletRequest;
         HttpServletResponse response=(HttpServletResponse)servletResponse;
-
-        String hm=request.getMethod();
-        response.setHeader("Access-Control-Allow-Origin","*");
-        response.setHeader("Access-Control-Allow-Methods","POST,GET,OPTIONS,DELETE");
-        response.setHeader("Access-Control-Max-Age","3600");
-        response.setHeader("Access-Control-Allow-Headers","Origin,X-Requested-With,Content-Type,Accept");
-
-
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Headers", "Authorization,Origin, X-Requested-With, Content-Type, Accept");
 
         String url=request.getRequestURI().substring(request.getContextPath().length());
         if(url.startsWith("/") && url.length()>1){
             url=url.substring(1);
         }
 
-
-
-
         if(isInclude(url)){
             filterChain.doFilter(request,response);
             return;
         }else{
             String token=request.getHeader("Authorization");
-            if(token!=null){
-                Boolean isAuth=authService.validateToken(token);
-                if(isAuth)
-                    filterChain.doFilter(servletRequest,servletResponse);
+            if(token!=null && authService.validateToken(token)){
+                filterChain.doFilter(request,response);
+                return;
+            }
+            else{
+                response.setContentType("application/json;charset=UTF-8");
+                PrintWriter out=response.getWriter();
+                out.write("{\"code\":\"401\",\"message\":\"token验证失败\"}");
+                out.close();
+                filterChain.doFilter(request,response);
+                return;
             }
         }
-       **/
     }
 
     private boolean isInclude(String url){

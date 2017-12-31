@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {router} from '@/router';
 
 //axios默认配置
 axios.defaults.baseURL = 'http://localhost:3000';
@@ -22,7 +23,11 @@ axios.interceptors.request.use(
 // http response 拦截器
 axios.interceptors.response.use(
     response => {
-        return response;
+        if(response.data.code=="401"){
+            router.push({path:'/login'});
+        }else{
+            return response;
+        }
     },
     error => {
         if (error.response) {
