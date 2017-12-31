@@ -24,7 +24,7 @@ public class EmployeeController {
         return employeeService.get(sysno);
     }
 
-    @AuthPassport
+    //@AuthPassport
     @RequestMapping(value = "/employees",method = RequestMethod.GET)
     public JsonRowsResult<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
                                           @RequestParam(value = "employeesex",required = false) Integer employeeSex,
