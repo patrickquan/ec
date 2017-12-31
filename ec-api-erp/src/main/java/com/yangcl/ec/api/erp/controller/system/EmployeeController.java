@@ -1,6 +1,7 @@
 package com.yangcl.ec.api.erp.controller.system;
 
 import com.github.pagehelper.PageInfo;
+import com.yangcl.ec.api.erp.common.AuthPassport;
 import com.yangcl.ec.api.erp.service.erp.EmployeeService;
 import com.yangcl.ec.common.entity.common.JsonRowsResult;
 import com.yangcl.ec.common.entity.erp.domain.Employee;
@@ -23,6 +24,7 @@ public class EmployeeController {
         return employeeService.get(sysno);
     }
 
+    @AuthPassport
     @RequestMapping(value = "/employees",method = RequestMethod.GET)
     public JsonRowsResult<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
                                           @RequestParam(value = "employeesex",required = false) Integer employeeSex,

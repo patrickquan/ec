@@ -1,5 +1,6 @@
 package com.yangcl.ec.api.erp.controller.system;
 
+import com.yangcl.ec.api.erp.common.AuthPassport;
 import com.yangcl.ec.api.erp.service.authentication.AuthService;
 import com.yangcl.ec.api.erp.service.erp.UserService;
 import com.yangcl.ec.common.entity.erp.domain.Role;
@@ -52,6 +53,7 @@ public class UserController {
         return isToken.toString();
     }
 
+    //@AuthPassport
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public JsonResult<UserDto> userLogin(@RequestBody User user){
         if(user==null || user.getLoginName()==null || user.getLoginName()==""){
