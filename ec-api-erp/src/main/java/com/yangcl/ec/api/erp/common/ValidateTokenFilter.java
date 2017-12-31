@@ -27,36 +27,50 @@ public class ValidateTokenFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         removes.add("info");
         removes.add("test/login");
+        removes.add("login");
     }
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        HttpServletResponse httpServletResponse=(HttpServletResponse)servletResponse;
+        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Authorization,Origin, X-Requested-With, Content-Type, Accept");
+        filterChain.doFilter(servletRequest,httpServletResponse);
+
+
+
+
+        /**
         HttpServletRequest request=(HttpServletRequest)servletRequest;
         HttpServletResponse response=(HttpServletResponse)servletResponse;
+
+        String hm=request.getMethod();
+        response.setHeader("Access-Control-Allow-Origin","*");
+        response.setHeader("Access-Control-Allow-Methods","POST,GET,OPTIONS,DELETE");
+        response.setHeader("Access-Control-Max-Age","3600");
+        response.setHeader("Access-Control-Allow-Headers","Origin,X-Requested-With,Content-Type,Accept");
+
+
+
         String url=request.getRequestURI().substring(request.getContextPath().length());
         if(url.startsWith("/") && url.length()>1){
             url=url.substring(1);
         }
 
+
+
+
         if(isInclude(url)){
             filterChain.doFilter(request,response);
             return;
         }else{
-            RequestDispatcher dispatcher=request.getRequestDispatcher("/test/error");
-            dispatcher.forward(request,response);
-            filterChain.doFilter(request,response);
-            return;
-        }
-
-
-        /**
-        String token=request.getHeader("Authorization");
-        if(token!=null){
-            Boolean isAuth=authService.validateToken(token);
-            if(isAuth){
-                filterChain.doFilter(servletRequest,servletResponse);
+            String token=request.getHeader("Authorization");
+            if(token!=null){
+                Boolean isAuth=authService.validateToken(token);
+                if(isAuth)
+                    filterChain.doFilter(servletRequest,servletResponse);
             }
         }
-         **/
+       **/
     }
 
     private boolean isInclude(String url){
