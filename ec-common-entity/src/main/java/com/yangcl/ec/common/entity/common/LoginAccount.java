@@ -9,6 +9,7 @@ public class LoginAccount {
     private String password;
     private List<String> permissions;
     private String sysName;
+    private String token;
 
     public LoginAccount(){}
     public LoginAccount(String accountId){
@@ -169,5 +170,13 @@ public class LoginAccount {
 
     public void setSysName(String sysName) {
         this.sysName = sysName;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

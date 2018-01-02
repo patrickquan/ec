@@ -1,8 +1,10 @@
 package com.yangcl.ec.service.authentication.controller;
 
+import com.yangcl.ec.common.entity.common.JsonResult;
 import com.yangcl.ec.common.entity.common.LoginAccount;
 import com.yangcl.ec.common.entity.erp.domain.Permission;
 import com.yangcl.ec.service.authentication.common.JwtUtil;
+import com.yangcl.ec.service.authentication.common.OnlineAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,9 +36,11 @@ public class AuthController {
      * @return
      */
     @RequestMapping(value = "/auth/token/create/loginaccount",method = RequestMethod.POST)
-    public String createdToken(@RequestBody LoginAccount loginAccount){
+    public LoginAccount createdToken(@RequestBody LoginAccount loginAccount){
         String token=jwtUtil.createdToken(loginAccount);
-        return token;
+        loginAccount.setToken(token);
+        OnlineAccountRepository.addAccount(loginAccount);
+        return loginAccount;
     }
 
     /**
@@ -50,35 +54,26 @@ public class AuthController {
     }
 
     /**
-     * 获取自定义值
-     * @param token
-     * @param key
+     * 验证token
+     * @param loginAccount
      * @return
      */
-    @RequestMapping(value = "/auth/token/value",method = RequestMethod.POST)
-    public Object getValueFromToken(@RequestParam String token,@RequestParam String key){
-        return jwtUtil.getValueFromToken(token,key);
+    @RequestMapping(value = "/auth/token/validate/loginaccount",method = RequestMethod.POST)
+    public Boolean validateToken(@RequestBody LoginAccount loginAccount){
+        return jwtUtil.validateToken(loginAccount);
     }
 
-    @RequestMapping(value = "/test")
-    public String test(){
-        Map<String,Object> claims=new HashMap<String,Object>();
-        claims.put("sub","admin");
-        List<Permission> permissions=new ArrayList<Permission>();
-        Permission p=new Permission();
-        p.setPermissionName("Dashboard");
-        permissions.add(p);
-        p=new Permission();
-        p.setPermissionName("系统管理");
-        permissions.add(p);
-        claims.put("permissions",permissions);
-        String token=jwtUtil.createdToken(claims);
-
-        String user=jwtUtil.getAccountFromToken(token);
-        Object result=jwtUtil.getValueFromToken(token,"permissions");
-
-        List<Permission> presult=(List<Permission>)result;
-
-        return user;
+    /**
+     * 获取登录帐户信息
+     * @return
+     */
+    @RequestMapping(value = "/auth/account/getbytoken",method = RequestMethod.POST)
+    public LoginAccount getAccount(@RequestBody String token){
+        LoginAccount loginAccount=jwtUtil.getLoginAccountFromToken(token);
+        if(loginAccount==null){
+            return null;
+        }
+        loginAccount= OnlineAccountRepository.getAccountByUsername(loginAccount.getAccountId(),loginAccount.getSysName());
+        return loginAccount;
     }
 }

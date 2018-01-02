@@ -1,5 +1,7 @@
 package com.yangcl.ec.common.entity.common;
 
+import java.util.List;
+
 public class JsonResult<T> {
     //返回码
     private String code;
@@ -9,6 +11,10 @@ public class JsonResult<T> {
     private String token;
     //返回对象
     private T entity;
+    //返回集合
+    private List<T> rows;
+    //返回总记录数
+    private Long total;
 
     public JsonResult(){}
     public JsonResult(String code, String message){
@@ -69,4 +75,19 @@ public class JsonResult<T> {
     }
 
 
+    public List<T> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<T> rows) {
+        this.rows = rows;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
 }

@@ -53,7 +53,7 @@ public class JwtUtil {
       claims.put("username",loginAccount.getUsername());
       claims.put("password",loginAccount.getPassword());
       claims.put("otherName",loginAccount.getOtherName());
-      claims.put("permissions",loginAccount.getPermissions());
+      claims.put("sysName",loginAccount.getSysName());
       return this.createdToken(claims);
    }
 
@@ -86,15 +86,14 @@ public class JwtUtil {
 
    /**
     * 验证token
-    * @param token
     * @param loginAccount
     * @return
     */
-   public Boolean validateToken(String token,LoginAccount loginAccount){
+   public Boolean validateToken(LoginAccount loginAccount){
       Boolean result=(
-              loginAccount.getAccountId().equals(this.getValueFromToken(token,"accountId"))
-              && loginAccount.getUsername().equals(this.getValueFromToken(token,"username"))
-              && !this.isTokenExpired(token));
+              loginAccount.getAccountId().equals(this.getValueFromToken(loginAccount.getToken(),"accountId"))
+              && loginAccount.getUsername().equals(this.getValueFromToken(loginAccount.getToken(),"username"))
+              && !this.isTokenExpired(loginAccount.getToken()));
       return result;
    }
 
@@ -123,14 +122,13 @@ public class JwtUtil {
       LoginAccount loginAccount;
       try{
          final Claims claims=getClaimsFromToken(token);
-         loginAccount=new LoginAccount(
-                 claims.get("accountId").toString(),
-                 claims.get("accountName").toString(),
-                 claims.get("username").toString(),
-                 claims.get("password").toString(),
-                 claims.get("otherName").toString(),
-                 (List<String>)claims.get("permissions")
-         );
+         loginAccount=new LoginAccount();
+         loginAccount.setAccountId(claims.get("accountId").toString());
+         loginAccount.setAccountName(claims.get("accountName").toString());
+         loginAccount.setUsername(claims.get("username").toString());
+         loginAccount.setPassword(claims.get("password").toString());
+         loginAccount.setOtherName(claims.get("otherName").toString());
+         loginAccount.setSysName(claims.get("sysName").toString());
       }catch (Exception err){
          loginAccount=null;
       }

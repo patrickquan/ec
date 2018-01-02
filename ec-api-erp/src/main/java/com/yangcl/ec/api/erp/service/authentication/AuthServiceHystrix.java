@@ -1,5 +1,6 @@
 package com.yangcl.ec.api.erp.service.authentication;
 
+import com.yangcl.ec.common.entity.common.LoginAccount;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -10,11 +11,18 @@ public class AuthServiceHystrix implements AuthService {
         return "error2";
     }
 
+    public LoginAccount createToken(LoginAccount loginAccount) {
+        return null;
+    }
     public Boolean validateToken(String token) {
         return null;
     }
 
-    public Object getValue(String token, String ken) {
-        return null;
+    public Boolean validateToken(LoginAccount loginAccount) {
+        return false;
+    }
+
+    public LoginAccount getAccountByToken(String token) {
+        return new LoginAccount();
     }
 }

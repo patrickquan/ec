@@ -2,6 +2,7 @@ package com.yangcl.ec.api.erp.common;
 
 import com.netflix.ribbon.proxy.annotation.Http;
 import com.yangcl.ec.api.erp.service.authentication.AuthService;
+import com.yangcl.ec.common.entity.common.LoginAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 

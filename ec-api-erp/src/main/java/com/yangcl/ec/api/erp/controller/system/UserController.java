@@ -76,11 +76,18 @@ public class UserController {
             userDto.setLoginName(result.getLoginName());
             userDto.setMenus(result.getRoles());
             //创建token
-            Map<String,Object> claims=new HashMap<String,Object>();
-            claims.put("sub",userDto.getLoginName());
-            String token=authService.createToken(claims);
-            userDto.setToken(token);
-            return new JsonResult<UserDto>("200","登录成功！",token,userDto);
+            LoginAccount loginAccount=new LoginAccount();
+            loginAccount.setAccountId(result.getSysno().toString());
+            loginAccount.setAccountName(result.getEmployee().getEmployeeName());
+            loginAccount.setOtherName("");
+            loginAccount.setPassword("");
+            loginAccount.setSysName("erp");
+            loginAccount.setUsername(result.getLoginName());
+            loginAccount.setPermissions(result.getPermissionStringList());
+
+            LoginAccount loginResult=authService.createToken(loginAccount);
+            userDto.setToken(loginResult.getToken());
+            return new JsonResult<UserDto>("200","登录成功！",loginResult.getToken(),userDto);
         }
     }
 }
