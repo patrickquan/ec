@@ -59,7 +59,9 @@ public class ValidateTokenFilter implements Filter {
             return;
         }else{
             String token=request.getHeader("Authorization");
-            if(token!=null && authService.validateToken(token)){
+            LoginAccount loginAccount=new LoginAccount();
+            loginAccount.setToken(token);
+            if(token!=null && authService.validateToken(loginAccount)){
                 filterChain.doFilter(request,response);
                 return;
             }

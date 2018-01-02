@@ -24,7 +24,7 @@ public class OnlineAccountRepository {
     }
 
     //获取在线用户
-    public static LoginAccount getAccountByUsername(String accountId,String sysName){
+    public static LoginAccount getAccount(String accountId,String sysName){
         List<LoginAccount> las=ONLINE_ACCOUNT_LIST;
         for(LoginAccount la:las){
             if(la.getAccountId().equals(accountId) && la.getSysName().equals(sysName)){
@@ -37,5 +37,14 @@ public class OnlineAccountRepository {
     //获取在线用户列表
     public static List<LoginAccount> getAccounts(){
         return ONLINE_ACCOUNT_LIST;
+    }
+
+    //删除在线用户
+    public static void removeAccount(String accountId,String sysName){
+        for(int i=0;i<ONLINE_ACCOUNT_LIST.size();i++){
+            if(ONLINE_ACCOUNT_LIST.get(i).getAccountId().equals(accountId) && ONLINE_ACCOUNT_LIST.get(i).getSysName().equals(sysName)){
+                ONLINE_ACCOUNT_LIST.remove(i);
+            }
+        }
     }
 }

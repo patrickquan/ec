@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>在线用户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <div>
+      <h3>在线用户</h3><br/>
+      <table border="1">
+          <tr style="background-color: cadetblue;">
+              <td style="width:60px;">帐户ID</td>
+              <td style="width:200px;">帐号</td>
+              <td style="width:200px;">姓名</td>
+              <td style="width:200px;">其他名</td>
+              <td style="width:200px;">密码</td>
+              <td style="width:100px;">系统</td>
+              <td style="width:100px;text-align:center;">操作</td>
+          </tr>
+          <tr th:each="account:${accounts}">
+              <td th:text="${account.accountId}"></td>
+              <td th:text="${account.username}"></td>
+              <td th:text="${account.accountName}"></td>
+              <td th:text="${account.otherName}"></td>
+              <td th:text="${account.password}"></td>
+              <td th:text="${account.sysName}"></td>
+              <td style="width:100px;text-align:center;"><a th:href="@{/tools/account/remove(accountId=${account.accountId},sysName=${account.sysName})}">下线</a></td>
+          </tr>
+      </table>
+  </div>
+</body>
+</html>

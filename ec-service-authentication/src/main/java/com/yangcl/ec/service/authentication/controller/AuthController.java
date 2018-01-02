@@ -60,7 +60,17 @@ public class AuthController {
      */
     @RequestMapping(value = "/auth/token/validate/loginaccount",method = RequestMethod.POST)
     public Boolean validateToken(@RequestBody LoginAccount loginAccount){
-        return jwtUtil.validateToken(loginAccount);
+        //验证token
+        LoginAccount accountResult=jwtUtil.getLoginAccountFromToken(loginAccount.getToken());
+        if(accountResult==null){
+            return false;
+        }
+        //查找是否在线
+        accountResult= OnlineAccountRepository.getAccount(accountResult.getAccountId(),accountResult.getSysName());
+        if(accountResult==null){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -73,7 +83,7 @@ public class AuthController {
         if(loginAccount==null){
             return null;
         }
-        loginAccount= OnlineAccountRepository.getAccountByUsername(loginAccount.getAccountId(),loginAccount.getSysName());
+        loginAccount= OnlineAccountRepository.getAccount(loginAccount.getAccountId(),loginAccount.getSysName());
         return loginAccount;
     }
 }

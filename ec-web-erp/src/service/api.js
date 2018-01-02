@@ -2,7 +2,7 @@ import axios from 'axios';
 import {router} from '@/router';
 
 //axios默认配置
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://39.104.58.225:8088';
 axios.defaults.timeout = 5000;
 
 // http request 拦截器
