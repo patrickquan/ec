@@ -20,7 +20,6 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-
     @Value("${account.repository}")
     private String accountRepositoryName;
 
@@ -36,30 +35,6 @@ public class AuthController {
     public void  init(){
         AccountFactory accountFactory=new AccountFactory();
         accountRepository=accountFactory.getInstance(accountRepositoryName);
-    }
-
-    /**
-     * 创建token
-     * @param claims
-     * @return
-     */
-    @RequestMapping(value = "/auth/token/create",method = RequestMethod.POST)
-    public String createToken(@RequestBody Map<String,Object> claims){
-        String token=jwtUtil.createdToken(claims);
-        return token;
-    }
-
-    /**
-     * 创建token
-     * @param loginAccount
-     * @return
-     */
-    @RequestMapping(value = "/auth/token/create/loginaccount",method = RequestMethod.POST)
-    public LoginAccount createdToken(@RequestBody LoginAccount loginAccount){
-        String token=jwtUtil.createdToken(loginAccount);
-        loginAccount.setToken(token);
-        accountRepository.addAccount(loginAccount);
-        return loginAccount;
     }
 
     /**
@@ -103,36 +78,6 @@ public class AuthController {
     }
 
     /**
-     * 验证token
-     * @param token
-     * @return
-     */
-    @RequestMapping(value = "/auth/token/validate",method = RequestMethod.POST)
-    public Boolean validateToken(@RequestBody String token){
-        return jwtUtil.validateToken(token);
-    }
-
-    /**
-     * 验证token
-     * @param loginAccount
-     * @return
-     */
-    @RequestMapping(value = "/auth/token/validate/loginaccount",method = RequestMethod.POST)
-    public Boolean validateToken(@RequestBody LoginAccount loginAccount){
-        //验证token
-        LoginAccount accountResult=jwtUtil.getLoginAccountFromToken(loginAccount.getToken());
-        if(accountResult==null){
-            return false;
-        }
-        //查找是否在线
-        accountResult= accountRepository.getAccount(accountResult.getAccountId(),accountResult.getSysName());
-        if(accountResult==null){
-            return false;
-        }
-        return true;
-    }
-
-    /**
      * 登录验证
      * @param token token
      * @return JsonResult
@@ -166,19 +111,5 @@ public class AuthController {
         jsonResult.setMessage("登录验证成功");
         jsonResult.setEntity(accountResult);
         return jsonResult;
-    }
-
-    /**
-     * 获取登录帐户信息
-     * @return
-     */
-    @RequestMapping(value = "/auth/account/getbytoken",method = RequestMethod.POST)
-    public LoginAccount getAccount(@RequestBody String token){
-        LoginAccount loginAccount=jwtUtil.getLoginAccountFromToken(token);
-        if(loginAccount==null){
-            return null;
-        }
-        loginAccount= accountRepository.getAccount(loginAccount.getAccountId(),loginAccount.getSysName());
-        return loginAccount;
     }
 }
