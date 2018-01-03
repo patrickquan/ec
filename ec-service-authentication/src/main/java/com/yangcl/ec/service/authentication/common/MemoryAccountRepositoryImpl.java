@@ -46,14 +46,16 @@ public class MemoryAccountRepositoryImpl implements AccountRepository {
             LoginAccount la=ONLINE_ACCOUNT_LIST.get(i);
             if(la.getAccountId().equals(accountId) && la.getSysName().equals(sysName) && la.getToken().equals(token)){
                 //判断如果过期则移除登录帐户
-                if(la.getLastLoginTime().compareTo(new Date(System.currentTimeMillis()-expiration*1000))<0 ){
-                    ONLINE_ACCOUNT_LIST.remove(i);
+                if(new Date(System.currentTimeMillis()).compareTo(la.getExpirationTime())>0 ){
+                    this.removeAccount(accountId,sysName,token);
                 }else{
+                    la.setExpirationTime(new Date(System.currentTimeMillis()+expiration*1000));//重置过期时间，续期
+                    this.updateAccount(la);
                     loginAccount=la;
                 }
             }
         }
-        return null;
+        return loginAccount;
     }
     public void removeAccount(String accountId, String sysName,String token) {
         for(int i=0;i<ONLINE_ACCOUNT_LIST.size();i++){

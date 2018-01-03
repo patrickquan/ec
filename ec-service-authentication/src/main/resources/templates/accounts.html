@@ -16,6 +16,7 @@
               <td style="width:200px;">密码</td>
               <td style="width:100px;">系统</td>
               <td style="width:100px;">登录时间</td>
+              <td style="width:100px;">过期时间</td>
               <td style="width:100px;">登录IP</td>
               <td style="width:100px;text-align:center;">操作</td>
           </tr>
@@ -27,6 +28,7 @@
               <td th:text="${account.password}"></td>
               <td th:text="${account.sysName}"></td>
               <td th:text="${#dates.format(account.lastLoginTime,'yyyy-MM-dd HH:mm:ss')}"></td>
+              <td th:text="${#dates.format(account.expirationTime,'yyyy-MM-dd HH:mm:ss')}"></td>
               <td th:text="${account.lastLoginIP}"></td>
               <td style="width:100px;text-align:center;"><a th:href="@{/tools/account/remove(accountId=${account.accountId},sysName=${account.sysName},token=${account.token})}">下线</a></td>
           </tr>

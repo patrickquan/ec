@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -51,7 +52,9 @@ public class AuthController {
         //参数校验
         if(loginAccount==null ||
                 loginAccount.getUsername()==null ||
-                loginAccount.getUsername().equals("")){
+                loginAccount.getUsername().equals("") ||
+                loginAccount.getSysName()==null ||
+                loginAccount.getSysName().equals("")){
             jsonResult.setCode("400");
             jsonResult.setMessage("帐户为空");
             return jsonResult;
@@ -59,8 +62,9 @@ public class AuthController {
 
         //获取登录帐户
         LoginAccount onlineAccount=accountRepository.getAccount(loginAccount.getAccountId(),loginAccount.getSysName());
+        loginAccount.setToken(jwtUtil.createdToken(loginAccount));//设置token
+        loginAccount.setExpirationTime(new Date(System.currentTimeMillis()+accountExpiration*1000));//设置过期时间
         if(onlineAccount!=null){
-            loginAccount.setToken(jwtUtil.createdToken(loginAccount));
             //判断是否单会话登录，单会话登录会顶掉之前的会话
             if(accountSingle){
                 accountRepository.updateAccount(loginAccount);//更新登录信息
@@ -69,8 +73,7 @@ public class AuthController {
             }
 
         }else{
-            //未登录过，创建token并添加到在线用户
-            loginAccount.setToken(jwtUtil.createdToken(loginAccount));
+            //未登录过，添加到在线用户
             accountRepository.addAccount(loginAccount);//加入登录信息
         }
         jsonResult.setEntity(loginAccount);

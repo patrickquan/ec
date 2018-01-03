@@ -12,6 +12,7 @@ public class LoginAccount {
     private String sysName;
     private String token;
     private Date lastLoginTime;
+    private Date expirationTime;
     private String lastLoginIP;
 
     public LoginAccount(){}
@@ -197,5 +198,13 @@ public class LoginAccount {
 
     public void setLastLoginIP(String lastLoginIP) {
         this.lastLoginIP = lastLoginIP;
+    }
+
+    public Date getExpirationTime() {
+        return expirationTime;
+    }
+
+    public void setExpirationTime(Date expirationTime) {
+        this.expirationTime = expirationTime;
     }
 }
