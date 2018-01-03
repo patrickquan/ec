@@ -16,7 +16,12 @@ public class MySQLAccountRepositoryImpl implements AccountRepository {
         return null;
     }
 
-    public void removeAccount(String accountId, String sysName) {
+    public LoginAccount getAccount(String accountId, String sysName, String token) {
+        return null;
+    }
+    public LoginAccount getAccount(String accountId, String sysName, String token,Long expiration) {return null;}
+
+    public void removeAccount(String accountId, String sysName,String token) {
 
     }
 

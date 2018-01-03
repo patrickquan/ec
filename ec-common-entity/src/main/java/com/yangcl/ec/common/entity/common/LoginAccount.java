@@ -1,4 +1,5 @@
 package com.yangcl.ec.common.entity.common;
+import java.util.Date;
 import java.util.List;
 
 public class LoginAccount {
@@ -10,6 +11,8 @@ public class LoginAccount {
     private List<String> permissions;
     private String sysName;
     private String token;
+    private Date lastLoginTime;
+    private String lastLoginIP;
 
     public LoginAccount(){}
     public LoginAccount(String accountId){
@@ -178,5 +181,21 @@ public class LoginAccount {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Date getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
+
+    public String getLastLoginIP() {
+        return lastLoginIP;
+    }
+
+    public void setLastLoginIP(String lastLoginIP) {
+        this.lastLoginIP = lastLoginIP;
     }
 }

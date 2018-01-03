@@ -1,6 +1,7 @@
 package com.yangcl.ec.api.erp.common;
 
 import com.yangcl.ec.api.erp.service.authentication.AuthService;
+import com.yangcl.ec.common.entity.common.JsonResult;
 import com.yangcl.ec.common.entity.common.LoginAccount;
 import com.yangcl.ec.common.entity.erp.domain.Permission;
 import org.springframework.beans.factory.BeanFactory;
@@ -16,14 +17,28 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 拦截器，实现权限验证
+ */
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
     private AuthService authService;
 
+    /**
+     * 拦载
+     * @param request
+     * @param response
+     * @param handler
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,Object handler) throws Exception{
+
+        //判断是否为方法
         if(handler.getClass().isAssignableFrom(HandlerMethod.class)){
+            //判断是否有注解和注解参数是否为true才进行权限验证
             AuthPassport authPassport=((HandlerMethod)handler).getMethodAnnotation(AuthPassport.class);
 
             //没有声明需要权限，或者声明不验证权限
@@ -42,13 +57,14 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
                         authService=(AuthService)factory.getBean(AuthService.class);
                     }
 
-                    LoginAccount loginAccount=authService.getAccountByToken(token);
-                    if(loginAccount!=null && loginAccount.getPermissions()!=null){
+                    //权限验证，根据token取得已登录帐户
+                    JsonResult<LoginAccount> loginResult=authService.loginValidate(token==null?"error":token);
+                    if(loginResult.getCode().equals("200") && loginResult.getEntity()!=null && loginResult.getEntity().getPermissions()!=null){
                         String url=request.getRequestURI().substring(request.getContextPath().length());
                         if(url.startsWith("/") && url.length()>1){
                             url=url.substring(1);
                         }
-                        for(String s:loginAccount.getPermissions()){
+                        for(String s:loginResult.getEntity().getPermissions()){
                             if(s!=null && s.equals("/"+url)){
                                 isAuth=true;
                             }

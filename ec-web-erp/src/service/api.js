@@ -2,7 +2,7 @@ import axios from 'axios';
 import {router} from '@/router';
 
 //axios默认配置
-axios.defaults.baseURL = 'http://39.104.58.225:8088';
+axios.defaults.baseURL = 'http://localhost:8088';
 axios.defaults.timeout = 5000;
 
 // http request 拦截器
@@ -23,7 +23,9 @@ axios.interceptors.request.use(
 // http response 拦截器
 axios.interceptors.response.use(
     response => {
-        if(response.data.code=="401"){
+        if(response.data.code=="402"){
+            router.push({path:'/message'});
+        }else if(response.data.code=="400" || response.data.code=="402" || response.data.code=="403"){
             router.push({path:'/login'});
         }else{
             return response;

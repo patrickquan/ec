@@ -2,9 +2,11 @@ package com.yangcl.ec.api.erp.common;
 
 import com.netflix.ribbon.proxy.annotation.Http;
 import com.yangcl.ec.api.erp.service.authentication.AuthService;
+import com.yangcl.ec.common.entity.common.JsonResult;
 import com.yangcl.ec.common.entity.common.LoginAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
+import sun.rmi.runtime.Log;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -59,16 +61,15 @@ public class ValidateTokenFilter implements Filter {
             return;
         }else{
             String token=request.getHeader("Authorization");
-            LoginAccount loginAccount=new LoginAccount();
-            loginAccount.setToken(token);
-            if(token!=null && authService.validateToken(loginAccount)){
+            JsonResult<LoginAccount> loginResult=authService.loginValidate(token==null?"error":token);
+            if(loginResult.getCode().equals("200")){
                 filterChain.doFilter(request,response);
                 return;
             }
             else{
                 response.setContentType("application/json;charset=UTF-8");
                 PrintWriter out=response.getWriter();
-                out.write("{\"code\":\"401\",\"message\":\"token验证失败\"}");
+                out.write("{\"code\":\""+loginResult.getCode()+"\",\"message\":\""+loginResult.getMessage()+"\"}");
                 out.close();
                 filterChain.doFilter(request,response);
                 return;
