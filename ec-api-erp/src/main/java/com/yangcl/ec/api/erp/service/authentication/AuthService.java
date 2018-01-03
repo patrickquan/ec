@@ -9,17 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Map;
 @FeignClient(value = "ec-service-authentication",fallback = AuthServiceHystrix.class)
 public interface AuthService {
-
-    @RequestMapping(value = "/auth/token/create",method = RequestMethod.POST)
-    public String createToken(Map<String,Object> claims);
-    @RequestMapping(value = "/auth/token/create/loginaccount",method = RequestMethod.POST)
-    public LoginAccount createToken(LoginAccount loginAccount);
-    @RequestMapping(value = "/auth/token/validate",method = RequestMethod.POST)
-    public Boolean validateToken(String token);
-    @RequestMapping(value = "/auth/token/validate/loginaccount",method = RequestMethod.POST)
-    public Boolean validateToken(LoginAccount loginAccount);
-    @RequestMapping(value = "/auth/account/getbytoken",method = RequestMethod.POST)
-    public LoginAccount getAccountByToken(String token);
     @RequestMapping(value = "/auth/account/login",method = RequestMethod.POST)
     public JsonResult<LoginAccount> loginIn(LoginAccount loginAccount);
     @RequestMapping(value = "/auth/account/validate",method = RequestMethod.POST)

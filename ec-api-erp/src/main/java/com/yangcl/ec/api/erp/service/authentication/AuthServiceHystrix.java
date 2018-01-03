@@ -9,24 +9,6 @@ import java.util.Map;
 
 @Component
 public class AuthServiceHystrix implements AuthService {
-    public String createToken(Map<String, Object> claims) {
-        return "error2";
-    }
-
-    public LoginAccount createToken(LoginAccount loginAccount) {
-        return null;
-    }
-    public Boolean validateToken(String token) {
-        return null;
-    }
-
-    public Boolean validateToken(LoginAccount loginAccount) {
-        return false;
-    }
-
-    public LoginAccount getAccountByToken(String token) {
-        return new LoginAccount();
-    }
     public JsonResult<LoginAccount> loginIn(LoginAccount loginAccount) {
         JsonResult<LoginAccount> jsonResult=new JsonResult<LoginAccount>();
         jsonResult.setCode("500");
