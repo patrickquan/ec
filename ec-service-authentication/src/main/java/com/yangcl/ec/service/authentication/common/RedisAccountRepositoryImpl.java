@@ -25,7 +25,19 @@ public class RedisAccountRepositoryImpl implements AccountRepository {
     }
     public LoginAccount getAccount(String accountId, String sysName, String token,Long expiration) {return null;}
 
+    public LoginAccount getAccount(String accountId, String sysName, String token, Long expiration, Boolean refreshExpiration) {
+        return null;
+    }
+
+    public LoginAccount getAccount(LoginAccount loginAccount, String token, Long expiration, Boolean refreshExpiration) {
+        return null;
+    }
+
     public void updateAccount(LoginAccount loginAccount) {
+
+    }
+
+    public void updateAccount(LoginAccount loginAccount, String token) {
 
     }
 

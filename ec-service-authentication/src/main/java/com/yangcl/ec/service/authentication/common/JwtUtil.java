@@ -2,32 +2,31 @@ package com.yangcl.ec.service.authentication.common;
 
 import com.yangcl.ec.common.entity.common.LoginAccount;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
-import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+/**
+ * JWT操作类
+ */
 @Component
 public class JwtUtil {
    private static final String CLAIM_KEY_USER_ACCOUNT="sub";
    private static final String CLAIM_KEY_CREATED="created";
 
-   @Value("${jwt.secret}")
+   @Value("${account.jwt.secret}")
    private String secret;
 
-   @Value("${jwt.expiration}")
+   @Value("${account.jwt.expiration}")
    private Long expiration;
+
+   //导入配置-是否刷新token
+   @Value("${account.jwt.refreshExpiration}")
+   private Boolean refreshExpiration;
 
    /**
     * 生成Token
@@ -123,12 +122,12 @@ public class JwtUtil {
       try{
          final Claims claims=getClaimsFromToken(token);
          loginAccount=new LoginAccount();
-         loginAccount.setAccountId(claims.get("accountId").toString());
-         loginAccount.setAccountName(claims.get("accountName").toString());
-         loginAccount.setUsername(claims.get("username").toString());
-         loginAccount.setPassword(claims.get("password").toString());
-         loginAccount.setOtherName(claims.get("otherName").toString());
-         loginAccount.setSysName(claims.get("sysName").toString());
+         loginAccount.setAccountId(claims.get("accountId")==null?"":claims.get("accountId").toString());
+         loginAccount.setAccountName(claims.get("accountName")==null?"":claims.get("accountName").toString());
+         loginAccount.setUsername(claims.get("username")==null?"":claims.get("username").toString());
+         loginAccount.setPassword(claims.get("password")==null?"":claims.get("password").toString());
+         loginAccount.setOtherName(claims.get("otherName")==null?"":claims.get("otherName").toString());
+         loginAccount.setSysName(claims.get("sysName")==null?"":claims.get("sysName").toString());
       }catch (Exception err){
          loginAccount=null;
       }

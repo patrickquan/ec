@@ -13,4 +13,6 @@ public interface AuthService {
     public JsonResult<LoginAccount> loginIn(LoginAccount loginAccount);
     @RequestMapping(value = "/auth/account/validate",method = RequestMethod.POST)
     public JsonResult<LoginAccount> loginValidate(String token);
+    @RequestMapping(value = "/auth/account/refresh",method = RequestMethod.POST)
+    public JsonResult<LoginAccount> refreshAccount(String token);
 }

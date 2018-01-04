@@ -16,15 +16,15 @@ import java.util.List;
 @Controller
 public class ToolsController {
 
-    @Value("${account.repository}")
+    //导入配置-在线用户仓库实现名
+    @Value("${account.online.repository}")
     private String accountRepositoryName;
 
     private AccountRepository accountRepository;
 
     @PostConstruct
     public void  init(){
-        AccountFactory accountFactory=new AccountFactory();
-        accountRepository=accountFactory.getInstance(accountRepositoryName);
+        accountRepository=AccountFactory.getInstance(accountRepositoryName);
     }
 
     @RequestMapping(value = "/tools/accounts",method = RequestMethod.GET)

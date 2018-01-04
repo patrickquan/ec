@@ -22,4 +22,11 @@ public class AuthServiceHystrix implements AuthService {
         jsonResult.setMessage("熔断");
         return jsonResult;
     }
+
+    public JsonResult<LoginAccount> refreshAccount(String token) {
+        JsonResult<LoginAccount> jsonResult=new JsonResult<LoginAccount>();
+        jsonResult.setCode("500");
+        jsonResult.setMessage("熔断");
+        return jsonResult;
+    }
 }

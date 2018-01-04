@@ -3,7 +3,7 @@ package com.yangcl.ec.api.erp.controller.system;
 import com.github.pagehelper.PageInfo;
 import com.yangcl.ec.api.erp.common.AuthPassport;
 import com.yangcl.ec.api.erp.service.erp.EmployeeService;
-import com.yangcl.ec.common.entity.common.JsonRowsResult;
+import com.yangcl.ec.common.entity.common.JsonResult;
 import com.yangcl.ec.common.entity.erp.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,10 +26,10 @@ public class EmployeeController {
 
     @AuthPassport
     @RequestMapping(value = "/employees",method = RequestMethod.GET)
-    public JsonRowsResult<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
-                                          @RequestParam(value = "employeesex",required = false) Integer employeeSex,
-                                          @RequestParam(value = "pageNo",required = false) Integer pageNo,
-                                          @RequestParam(value = "pageSize",required = false) Integer pageSize){
+    public JsonResult<Employee> getEmployeeList(@RequestParam(value = "employeename",required = false) String employeeName,
+                                                @RequestParam(value = "employeesex",required = false) Integer employeeSex,
+                                                @RequestParam(value = "pageNo",required = false) Integer pageNo,
+                                                @RequestParam(value = "pageSize",required = false) Integer pageSize){
         pageNo=pageNo==null?1:pageNo;
         pageSize=pageSize==null?10:pageSize;
         Map<String,Object> where=new HashMap<String,Object>();
@@ -42,7 +42,7 @@ public class EmployeeController {
             where.put("employeeSex",employeeSex);
         }
         PageInfo<Employee> pageInfo=employeeService.select(where);
-        JsonRowsResult<Employee> rowsResult=new JsonRowsResult<Employee>();
+        JsonResult<Employee> rowsResult=new JsonResult<Employee>();
         rowsResult.setCode("200");
         rowsResult.setMessage("查询成功");
         rowsResult.setToken("");

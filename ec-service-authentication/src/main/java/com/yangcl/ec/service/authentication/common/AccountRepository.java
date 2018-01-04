@@ -28,6 +28,13 @@ public interface AccountRepository {
     public void updateAccount(LoginAccount loginAccount);
 
     /**
+     * 更新一个用户
+     * @param loginAccount 帐户
+     * @param token 原有token
+     */
+    public void updateAccount(LoginAccount loginAccount,String token);
+
+    /**
      * 获取一个帐户
      * @param accountId 帐户ID
      * @param sysName 系统名
@@ -53,6 +60,26 @@ public interface AccountRepository {
      * @return 帐户
      */
     public LoginAccount getAccount(String accountId,String sysName,String token,Long expiration);
+    /**
+     * 获取一个帐户
+     * @param accountId 帐户ID
+     * @param sysName 系统名
+     * @param token token
+     * @param expiration 过期
+     * @param refreshExpiration 是否刷新过期时间
+     * @return 帐户
+     */
+    public LoginAccount getAccount(String accountId,String sysName,String token,Long expiration,Boolean refreshExpiration);
+
+    /**
+     *
+     * @param loginAccount 帐户
+     * @param token 当前token
+     * @param expiration 过期时间
+     * @param refreshExpiration  是否刷新过期时间
+     * @return
+     */
+    public LoginAccount getAccount(LoginAccount loginAccount,String token,Long expiration,Boolean refreshExpiration);
 
     /**
      * 获取所有帐户
