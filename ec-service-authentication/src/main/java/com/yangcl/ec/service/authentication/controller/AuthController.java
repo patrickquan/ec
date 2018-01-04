@@ -61,6 +61,7 @@ public class AuthController {
     //线程同步锁
     private Lock lock=new ReentrantLock();
 
+
     /**
      * 登录
      * @param loginAccount 帐户
@@ -103,56 +104,6 @@ public class AuthController {
             accountRepository.addAccount(loginAccount);//加入登录信息
         }
         jsonResult.setEntity(loginAccount);
-        return jsonResult;
-    }
-
-    /**
-     * 登录验证
-     * @param token token
-     * @return JsonResult
-     */
-    @RequestMapping(value = "/auth/account/validate2",method = RequestMethod.POST)
-    @ResponseBody
-    public JsonResult<LoginAccount> loginValidate2(@RequestBody String token){
-
-        //如果采用刷新token模式，防止多线程并发更新问题需要同步锁
-        if(this.refreshExpirationJwt){
-            lock.lock();
-        }
-        //创建返回包装类型
-        JsonResult<LoginAccount> jsonResult = new JsonResult<LoginAccount>();
-        try {
-            //参数校验
-            if (token == null || token.equals("")) {
-                jsonResult.setCode(AppEnum.AuthResultCode.InputNull.getCode());
-                jsonResult.setMessage(AppEnum.AuthResultCode.InputNull.getMessage());
-                return jsonResult;
-            }
-
-            //验证token
-            LoginAccount accountResult = jwtUtil.getLoginAccountFromToken(token);
-            if (accountResult == null) {
-                jsonResult.setCode(AppEnum.AuthResultCode.TokenError.getCode());
-                jsonResult.setMessage(AppEnum.AuthResultCode.TokenError.getMessage());
-                return jsonResult;
-            }
-            //查找是否在线
-            accountResult = accountRepository.getAccount(accountResult, token, accountExpiration, refreshExpirationOnline);
-            if (accountResult == null) {
-                jsonResult.setCode(AppEnum.AuthResultCode.AccountNull.getCode());
-                jsonResult.setMessage(AppEnum.AuthResultCode.AccountNull.getMessage());
-                return jsonResult;
-            }
-
-            //验证成功
-            jsonResult.setCode(AppEnum.AuthResultCode.ValidateSuccess.getCode());
-            jsonResult.setMessage(AppEnum.AuthResultCode.ValidateSuccess.getMessage());
-            jsonResult.setEntity(accountResult);
-        }finally {
-            if(this.refreshExpirationJwt && this.refreshExpirationOnline){
-                lock.unlock();
-            }
-        }
         return jsonResult;
     }
 

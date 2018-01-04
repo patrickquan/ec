@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7b4e564-43f5-475d-ad86-e46f26c6b465" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/TokenSession.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemorySessionRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/SessionController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/TestController.java" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/TestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthServiceHystrix.java" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthServiceHystrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountFactory.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountRepository.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java" afterPath="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemoryAccountRepositoryImpl.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemoryAccountRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MySQLAccountRepositoryImpl.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MySQLAccountRepositoryImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/RedisAccountRepositoryImpl.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/RedisAccountRepositoryImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/ToolsController.java" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/ToolsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/resources/config/bootstrap.properties" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/resources/config/bootstrap.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-service-authentication/src/main/resources/templates/accounts.html" afterPath="$PROJECT_DIR$/ec-service-authentication/src/main/resources/templates/accounts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec-web-erp/src/service/api.js" afterPath="$PROJECT_DIR$/ec-web-erp/src/service/api.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,119 +44,114 @@
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ec$api_erp.coverage" NAME="api-erp Coverage Results" MODIFIED="1514989739052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ec$service_authentication.coverage" NAME="service-authentication Coverage Results" MODIFIED="1514993714878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ec$api_erp.coverage" NAME="api-erp Coverage Results" MODIFIED="1514989739052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="237">
-                  <caret line="178" column="36" lean-forward="true" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="36" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2239#2253#0" expanded="true" />
-                    <element signature="e#4127#4141#0" expanded="true" />
-                    <element signature="e#5893#5907#0" expanded="true" />
-                    <element signature="e#7415#7429#0" expanded="true" />
-                    <marker date="1515071240875" expanded="true" signature="5626:5634" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AuthServiceHystrix.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthServiceHystrix.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="487">
-                  <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AccountRepository.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountRepository.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="621">
-                  <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="40">
-                  <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MySQLAccountRepositoryImpl.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MySQLAccountRepositoryImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="782">
-                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RedisAccountRepositoryImpl.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/RedisAccountRepositoryImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="782">
-                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ec-web-erp/src/service/api.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InvocableHandlerMethod.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.6.RELEASE/spring-web-4.2.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
-                  <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="AuthService.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="15" column="80" lean-forward="false" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="AuthInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/AuthInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1197">
+              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="41" selection-end-column="41" />
+              <folding>
+                <element signature="e#5452#5466#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/SessionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="53" lean-forward="false" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemorySessionRepositoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemorySessionRepositoryImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#296#310#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JwtUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2453">
+              <caret line="184" column="41" lean-forward="false" selection-start-line="184" selection-start-column="15" selection-end-line="184" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1515082120663" expanded="true" signature="4406:4538" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValidateTokenFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -206,12 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/domain/BaseDomain.java" />
-        <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/dto/MenuDto.java" />
-        <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/mapping/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/domain/User.java" />
-        <option value="$PROJECT_DIR$/ec-web-erp/src/router/index.js" />
-        <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/dto/UserDto.java" />
         <option value="$PROJECT_DIR$/ec-web-erp/src/views/components/UserInfo.vue" />
         <option value="$PROJECT_DIR$/ec-web-erp/src/views/Login.vue" />
         <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/JsonListResult.java" />
@@ -236,7 +218,6 @@
         <option value="$PROJECT_DIR$/ec-api-erp/pom.xml" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/resources/config/bootstrap.properties" />
         <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemberAccountRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/AuthInterceptor.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/UserController.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/system/EmployeeController.java" />
@@ -249,14 +230,21 @@
         <option value="$PROJECT_DIR$/ec-service-authentication/src/main/resources/templates/accounts.html" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/controller/TestController.java" />
         <option value="$PROJECT_DIR$/ec-web-erp/src/service/api.js" />
-        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java" />
         <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountRepository.java" />
         <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemoryAccountRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MySQLAccountRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/RedisAccountRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java" />
-        <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java" />
         <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthServiceHystrix.java" />
+        <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java" />
+        <option value="$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java" />
+        <option value="$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/TokenSession.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionFactory.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionRepository.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemorySessionRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AccountController.java" />
+        <option value="$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/SessionController.java" />
       </list>
     </option>
   </component>
@@ -328,9 +316,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -341,78 +327,47 @@
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
               <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
+              <item name="ec-common-entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
               <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
+              <item name="ec-common-entity" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
               <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
+              <item name="ec-common-entity" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
               <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
+              <item name="ec-common-entity" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
               <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
+              <item name="ec-common-entity" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ec" type="462c0819:PsiDirectoryNode" />
+              <item name="ec-common-entity" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-api-erp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="erp" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
@@ -468,23 +423,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="authentication" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-service-authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ec" type="462c0819:PsiDirectoryNode" />
-              <item name="ec-service-authentication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec" type="b2602c69:ProjectViewProjectNode" />
@@ -509,6 +447,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1170,26 +1110,27 @@
       <workItem from="1514988897568" duration="1493000" />
       <workItem from="1514990864352" duration="3370000" />
       <workItem from="1515050614877" duration="17651000" />
+      <workItem from="1515074587007" duration="7183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200538000" />
+    <option name="totallyTimeSpent" value="207721000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25559106" sideWeight="0.48582995" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.128125" sideWeight="0.48582995" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44694534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.027513228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30397728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1201,7 +1142,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20167732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2015625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1267,7 +1208,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="136" />
+      <option name="time" value="140" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1282,38 +1223,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ErpWebMvcConfigurer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/resources/templates/hello.html" />
-    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/erp/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="77" column="27" lean-forward="false" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-server-eureka/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ec-server-config/ec-server-config.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1415,7 +1324,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,7 +1331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1431,34 +1338,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
           <caret line="44" column="65" lean-forward="false" selection-start-line="44" selection-start-column="65" selection-end-line="44" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/AppEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/AppEnum.java" />
     <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/resources/config/bootstrap.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1486,23 +1373,9 @@
         <state relative-caret-position="316">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
-            <element signature="e#1348#1349#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/LoginAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-          <folding>
-            <element signature="e#4237#4238#0" expanded="true" />
-            <element signature="e#4269#4270#0" expanded="true" />
-            <element signature="e#5220#5221#0" expanded="true" />
-            <element signature="e#5250#5251#0" expanded="true" />
-            <element signature="e#5394#5395#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="false" />
+            <element signature="e#1376#1377#0" expanded="false" />
+            <element signature="e#1509#1510#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1511,7 +1384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1519,15 +1391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.6.RELEASE/spring-webmvc-4.2.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1535,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="403" column="0" lean-forward="false" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1543,7 +1405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="492" column="0" lean-forward="false" selection-start-line="492" selection-start-column="0" selection-end-line="492" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1551,7 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1559,7 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1567,7 +1426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1575,7 +1433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1587,110 +1444,241 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.6.RELEASE/spring-web-4.2.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ec-web-erp/src/service/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="589">
+          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding>
+            <marker date="1515074556275" expanded="true" signature="277:338" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="380:489" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="531:574" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="649:670" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="688:743" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="892:932" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="953:1388" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="983:1230" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="1028:1220" ph="{...}" />
+            <marker date="1515074556275" expanded="true" signature="1055:1206" ph="..." />
+            <marker date="1515074556275" expanded="true" signature="1076:1150" ph="//..." />
+            <marker date="1515074556275" expanded="true" signature="1598:1609" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="703">
+          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <marker date="1515074556221" expanded="true" signature="594:605" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MySQLAccountRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="513">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1515074556239" expanded="true" signature="1154:1162" ph="{}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/RedisAccountRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="513">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1515074556249" expanded="true" signature="1154:1162" ph="{}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemoryAccountRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="965">
-          <caret line="122" column="88" lean-forward="false" selection-start-line="122" selection-start-column="88" selection-end-line="122" selection-end-column="88" />
+        <state relative-caret-position="392">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
             <element signature="e#475#489#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.2.6.RELEASE/spring-webmvc-4.2.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/AuthInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        <state relative-caret-position="-437">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthService.java">
+    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/LoginAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="15" column="80" lean-forward="false" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="178" column="36" lean-forward="true" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="36" />
+        <state relative-caret-position="145">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2239#2253#0" expanded="true" />
-            <element signature="e#4127#4141#0" expanded="true" />
-            <element signature="e#5893#5907#0" expanded="true" />
-            <element signature="e#7415#7429#0" expanded="true" />
-            <marker date="1515071240875" expanded="true" signature="5626:5634" ph="{...}" />
+            <element signature="e#4237#4238#0" expanded="true" />
+            <element signature="e#4269#4270#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/service/authentication/AuthServiceHystrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="380">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#465#479#0" expanded="false" />
+            <element signature="e#713#727#0" expanded="false" />
+            <element signature="e#962#976#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.6.RELEASE/spring-web-4.2.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/ValidateTokenFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-api-erp/src/main/java/com/yangcl/ec/api/erp/common/AuthInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-common-entity/src/main/java/com/yangcl/ec/common/entity/common/TokenSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1590#1591#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1666#1667#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1776#1777#0" expanded="true" />
+            <element signature="e#1817#1818#0" expanded="true" />
+            <element signature="e#1853#1854#0" expanded="true" />
+            <element signature="e#1912#1913#0" expanded="true" />
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1995#1996#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="e#2104#2105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/AccountFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="53" lean-forward="false" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/SessionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/MemorySessionRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#296#310#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/common/JwtUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2453">
+          <caret line="184" column="41" lean-forward="false" selection-start-line="184" selection-start-column="15" selection-end-line="184" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1515082120663" expanded="true" signature="4406:4538" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="41" selection-end-column="41" />
+          <folding>
+            <element signature="e#5452#5466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec-service-authentication/src/main/java/com/yangcl/ec/service/authentication/controller/SessionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

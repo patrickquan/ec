@@ -63,6 +63,8 @@ public class ValidateTokenFilter implements Filter {
             String token=request.getHeader("Authorization");
             JsonResult<LoginAccount> loginResult=authService.loginValidate(token==null?"error":token);
             if(loginResult.getCode().equals("200")){
+                loginResult=authService.refreshAccount(loginResult.getEntity().getToken());
+                response.setHeader("Authorization",loginResult.getEntity().getToken());
                 filterChain.doFilter(request,response);
                 return;
             }

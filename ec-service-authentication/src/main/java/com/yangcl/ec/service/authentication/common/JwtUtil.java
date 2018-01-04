@@ -1,6 +1,7 @@
 package com.yangcl.ec.service.authentication.common;
 
 import com.yangcl.ec.common.entity.common.LoginAccount;
+import com.yangcl.ec.common.entity.common.TokenSession;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -53,6 +54,15 @@ public class JwtUtil {
       claims.put("password",loginAccount.getPassword());
       claims.put("otherName",loginAccount.getOtherName());
       claims.put("sysName",loginAccount.getSysName());
+      return this.createdToken(claims);
+   }
+
+   public String createdToken(TokenSession session){
+      Map<String,Object> claims=new HashMap<String,Object>();
+      claims.put("sessionId",session.getSessionId());
+      claims.put("sessionName",session.getSessionName());
+      claims.put("sessionUser",session.getSessionUser());
+      claims.put("system",session.getSystem());
       return this.createdToken(claims);
    }
 
