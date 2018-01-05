@@ -60,9 +60,8 @@ public class JwtUtil {
    public String createdToken(TokenSession session){
       Map<String,Object> claims=new HashMap<String,Object>();
       claims.put("sessionId",session.getSessionId());
-      claims.put("sessionName",session.getSessionName());
-      claims.put("sessionUser",session.getSessionUser());
       claims.put("system",session.getSystem());
+      claims.put("uuid", java.util.UUID.randomUUID().toString());
       return this.createdToken(claims);
    }
 
@@ -142,6 +141,20 @@ public class JwtUtil {
          loginAccount=null;
       }
       return loginAccount;
+   }
+
+   public TokenSession getSessionFromToken(String token){
+      TokenSession session;
+      try{
+         final Claims claims=getClaimsFromToken(token);
+         session=new TokenSession();
+         session.setSessionId(claims.get("sessionId")==null?"":claims.get("sessionId").toString());
+         session.setSystem(claims.get("system")==null?"":claims.get("system").toString());
+      }catch (Exception err){
+         session=null;
+      }
+
+      return session;
    }
 
    /**

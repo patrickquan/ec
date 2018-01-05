@@ -14,7 +14,7 @@ public class TokenSession {
     private String refreshToken;
     private Date createdTime;
     private Date expirationTime;
-    private Integer sessionStatus;
+    private String sessionStatus;
 
     public TokenSession(){}
     public TokenSession(String sessionId,String sessionUser,String system){
@@ -80,11 +80,11 @@ public class TokenSession {
         this.expirationTime = expirationTime;
     }
 
-    public Integer getSessionStatus() {
+    public String getSessionStatus() {
         return sessionStatus;
     }
 
-    public void setSessionStatus(Integer sessionStatus) {
+    public void setSessionStatus(String sessionStatus) {
         this.sessionStatus = sessionStatus;
     }
 

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>在线会话</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <h3>在线用户</h3><br/>
+    <table border="1">
+        <tr style="background-color: cadetblue;">
+            <td style="width:60px;">会话ID</td>
+            <td>Token</td>
+            <td>状态</td>
+        </tr>
+        <tr th:each="ts:${sessions}">
+            <td th:text="${ts.sessionId}"></td>
+            <td th:text="${ts.token}"></td>
+            <td th:text="${ts.sessionStatus}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

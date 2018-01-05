@@ -4,16 +4,16 @@ import com.yangcl.ec.common.entity.common.AppEnum;
 import com.yangcl.ec.common.entity.common.JsonResult;
 import com.yangcl.ec.common.entity.common.LoginAccount;
 import com.yangcl.ec.common.entity.common.TokenSession;
+import com.yangcl.ec.common.entity.common.appenum.TokenSessionStatus;
 import com.yangcl.ec.service.authentication.common.*;
+import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import javax.xml.ws.RequestWrapper;
 import java.util.Date;
 
 @Controller
@@ -36,7 +36,7 @@ public class SessionController {
 
     //导入配置-是否刷新token
     @Value("${account.jwt.refreshExpiration}")
-    private Boolean refreshExpirationToken;
+    private Boolean refreshExpiration;
 
     //在线用户仓库接口
     private AccountRepository accountRepository;
@@ -53,13 +53,13 @@ public class SessionController {
 
     @RequestMapping(value = "/auth/session/created",method = RequestMethod.POST)
     @ResponseBody
-    public JsonResult createdSession(@RequestBody TokenSession session){
-        //返回包装类
-        JsonResult result=new JsonResult();
+    public String createdSession(@RequestBody TokenSession session){
         //创建token
         session.setToken(jwtUtil.createdToken(session));
         //设置帐户过期时间
         session.setExpirationTime(new Date(System.currentTimeMillis()+accountExpiration*1000));
+        //设置会话状态为正常
+        session.setSessionStatus(TokenSessionStatus.Normal.toString());
         //判断帐户是否在线
         if(sessionRepository.getSession(session.getSessionId(),session.getSystem())!=null){
             //如果帐户在线
@@ -74,27 +74,57 @@ public class SessionController {
             //不在线，新增会话
             sessionRepository.addSession(session);
         }
-        result.setCode(AppEnum.AuthResultCode.LoginSuccess.getCode());
-        result.setMessage(AppEnum.AuthResultCode.LoginSuccess.getMessage());
-        result.setToken(session.getToken());
-        return result;
+        return session.getToken();
     }
 
     @RequestMapping(value = "/auth/session/validate",method = RequestMethod.POST)
     @ResponseBody
     public TokenSession sessionValidate(@RequestBody String token){
-        TokenSession session=new TokenSession();
-        //验证token是否有效
-        Boolean tokenValid=jwtUtil.validateToken(token);
-        if(tokenValid){
+        TokenSession tokenSession=jwtUtil.getSessionFromToken(token);
+        TokenSession onlineSession=sessionRepository.getSession(tokenSession==null?"":tokenSession.getSessionId(),
+                tokenSession==null?"":tokenSession.getSystem(),token);
+        if(onlineSession!=null){
             //验证token有效期是否小于3分钟与配置是否刷新token，则生成刷新token
             Long timeMillis=jwtUtil.getExpirationDateFromToken(token).getTime()-System.currentTimeMillis();
-            if(timeMillis>0 && timeMillis<180000 && refreshExpirationToken){
-                session.setRefreshToken(jwtUtil.refreshToken(token));
+            if(timeMillis>0 && timeMillis<180000000 && refreshExpiration && onlineSession.getSessionStatus()==TokenSessionStatus.Normal.toString()){
+                //更新旧会话状态为将过期
+                onlineSession.setSessionStatus(TokenSessionStatus.Overdue.toString());
+                sessionRepository.updateSession(onlineSession);
+                //加入新会话状态为正常
+                onlineSession.setToken(jwtUtil.refreshToken(token));
+                onlineSession.setSessionStatus(TokenSessionStatus.Normal.toString());
+                sessionRepository.addSession(onlineSession);//加入新的会话
+                onlineSession.setRefreshToken(onlineSession.getToken());
+            }else{
+                onlineSession.setRefreshToken(null);
             }
         }
-        session.setToken(token);
-        return session;
+        return onlineSession;
     }
 
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    @ResponseBody
+    public String test(){
+
+        TokenSession session=new TokenSession();
+        session.setSessionId("1");
+        session.setSystem("erp");
+        String token=this.createdSession(session);
+        return token;
+    }
+
+    @RequestMapping(value = "/test2",method = RequestMethod.GET)
+
+    public String test2(@RequestParam String token){
+        TokenSession result=this.sessionValidate(token);
+
+
+        result=this.sessionValidate(token);
+
+
+
+        result=this.sessionValidate(token);
+
+        return "";
+    }
 }
