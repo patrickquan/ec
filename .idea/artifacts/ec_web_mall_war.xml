@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ec-web-mall:war">
-    <output-path>$PROJECT_DIR$/ec-web-mall/target</output-path>
-    <root id="archive" name="ec-web-mall.war">
-      <element id="artifact" artifact-name="ec-web-mall:war exploded" />
-    </root>
-  </artifact>
-</component>
